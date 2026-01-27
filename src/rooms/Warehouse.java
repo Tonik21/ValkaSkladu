@@ -1,4 +1,5 @@
 package rooms;
 
-public class Warehouse {
+public class Warehouse extends Room {
+
 }

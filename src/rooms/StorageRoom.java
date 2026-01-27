@@ -1,4 +1,4 @@
 package rooms;
 
-public class StorageRoom {
+public class StorageRoom extends Room{
 }
