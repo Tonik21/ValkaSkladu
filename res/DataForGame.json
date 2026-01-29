@@ -1,0 +1,134 @@
+{
+  "items": [
+    {
+      "nameOfItem": "Sports Car",
+      "rarity": 0.001,
+      "basePrice": 100000
+    },
+    {
+      "nameOfItem": "A collection of rare sports cards",
+      "rarity": 0.01,
+      "basePrice": 4500
+    },
+    {
+      "nameOfItem": "Beat-up electronics",
+      "rarity": 0.40,
+      "basePrice": 320
+    },
+    {
+      "nameOfItem": "Golden ring",
+      "rarity": 0.1,
+      "basePrice": 750
+    },
+    {
+      "nameOfItem": "Old Coins",
+      "rarity": 0.3,
+      "basePrice": 500
+    },
+    {
+      "nameOfItem": "Golden Watch",
+      "rarity": 0.01,
+      "basePrice": 4500
+    },
+    {
+      "nameOfItem": "Old clothes",
+      "rarity": 0.6,
+      "basePrice": 200
+    }
+  ],
+  "Rooms": {
+    "Warehouses": [
+      {
+        "nameOfLocation" : "One-way Pathway",
+        "characterInside" : null,
+        "sisterLocations" : ["StartWarehouse","MediumWarehouse","HardWarehouse","Gateway","AuctionHouse","VendorsHome"]
+      },
+      {
+        "nameOfLocation": "StartWarehouse",
+        "characterInside": "Vendor",
+        "sisterLocations": [
+          "MediumWarehouse",
+          "AuctionHouse",
+          "VendorsHouse"
+        ],
+        "itemRarityMultiplier": 1,
+        "entranceFee": 0
+      }
+      },
+      {
+        "nameOfLocation": "MediumWarehouse",
+        "characterInside": "Vendor",
+        "sisterLocations": [
+          "HardWarehouse",
+          "StartWarehouse"
+        ],
+        "itemRarityMultiplier": 1.5,
+        "entranceFee": 5000
+      },
+      {
+        "nameOfLocation": "HardWarehouse",
+        "characterInside": "Vendor",
+        "sisterLocations": [
+          "Gateway",
+          "MediumWarehouse"
+        ],
+        "itemRarityMultiplier": 2,
+        "entranceFee": 15000
+      }
+    ],
+    "Gateway": {
+      "characterInside": null,
+      "sisterLocations": [
+        "Richards Office",
+        "HardWarehouse"
+      ]
+    },
+    "Richards Office": {
+      "characterInside": "Richard Hangar",
+      "sisterLocations": [
+        "Gateway"
+      ]
+    },
+    "AuctionHouse": {
+      "characterInside": "AuctionMaster",
+      "sisterLocations": [
+        "StartWarehouse",
+        "VendorsHome"
+      ]
+    },
+    "VendorsHome": {
+      "characterInside": "Vendor",
+      "sisterLocations": [
+        "StartWarehouse",
+        "AuctionHouse"
+      ]
+    }
+  },
+  "characters": [
+    {
+      "name": "Vendor",
+      "Location": [
+        "VendorsHouse",
+        "StartWarehouse",
+        "MediumWarehouse",
+        "HardWarehouse"
+      ]
+    },
+    {
+      "name": "AuctionMaster",
+      "Location": "AuctionHouse"
+    },
+    {
+      "name": "Richard Hangar",
+      "Location": "Richards Office"
+    },
+    {
+      "name": "Micheal Storage",
+      "Location": "StartWarehouse"
+    }
+  ]
+}
+
+
+
+

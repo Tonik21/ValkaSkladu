@@ -3,12 +3,13 @@ package core_game_mechanics;
 public class Item {
     private String nameOfItem;
     private double rarity;
-    private double quality;
     private double basePrice;
 
-
-    private double calculateActualPriceOfItem(){
-        return basePrice *= rarity + quality;
+    public Item(String nameOfItem, double rarity, double basePrice) {
+        this.nameOfItem = nameOfItem;
+        this.rarity = rarity;
+        this.basePrice = basePrice;
     }
+
 
 }
