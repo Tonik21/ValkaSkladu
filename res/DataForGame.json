@@ -39,17 +39,13 @@
   "Rooms": {
     "Warehouses": [
       {
-        "nameOfLocation" : "One-way Pathway",
-        "characterInside" : null,
-        "sisterLocations" : ["StartWarehouse","MediumWarehouse","HardWarehouse","Gateway","AuctionHouse","VendorsHome"]
-      },
-      {
         "nameOfLocation": "StartWarehouse",
         "characterInside": "Vendor",
-        "sisterLocations": [
+        "neighbors": [
           "MediumWarehouse",
           "AuctionHouse",
-          "VendorsHouse"
+          "VendorsHouse",
+          "One-way Pathway"
         ],
         "itemRarityMultiplier": 1,
         "entranceFee": 0
@@ -57,9 +53,10 @@
       {
         "nameOfLocation": "MediumWarehouse",
         "characterInside": "Vendor",
-        "sisterLocations": [
+        "neighbors": [
           "HardWarehouse",
-          "StartWarehouse"
+          "StartWarehouse",
+          "One-way Pathway"
         ],
         "itemRarityMultiplier": 1.5,
         "entranceFee": 5000
@@ -67,41 +64,53 @@
       {
         "nameOfLocation": "HardWarehouse",
         "characterInside": "Vendor",
-        "sisterLocations": [
+        "neighbors": [
           "Gateway",
-          "MediumWarehouse"
+          "MediumWarehouse",
+          "One-way Pathway"
         ],
         "itemRarityMultiplier": 2,
         "entranceFee": 15000
       }
     ],
-    "Gateway": {
-      "characterInside": null,
-      "sisterLocations": [
-        "Richards Office",
-        "HardWarehouse"
-      ]
-    },
-    "Richards Office": {
-      "characterInside": "Richard Hangar",
-      "sisterLocations": [
-        "Gateway"
-      ]
-    },
-    "AuctionHouse": {
-      "characterInside": "AuctionMaster",
-      "sisterLocations": [
-        "StartWarehouse",
-        "VendorsHome"
-      ]
-    },
-    "VendorsHome": {
-      "characterInside": "Vendor",
-      "sisterLocations": [
-        "StartWarehouse",
-        "AuctionHouse"
-      ]
-    }
+    "nameOfLocation": "One-way Pathway",
+    "characterInside": null,
+    "neighbors": [
+      "StartWarehouse",
+      "Gateway",
+      "AuctionHouse",
+      "VendorsHome"
+    ]
+  },
+  "Gateway": {
+    "characterInside": null,
+    "neighbors": [
+      "Richards Office",
+      "HardWarehouse",
+      "One-way Pathway"
+    ]
+  },
+  "Richards Office": {
+    "characterInside": "Richard Hangar",
+    "neighbors": [
+      "Gateway"
+    ]
+  },
+  "AuctionHouse": {
+    "characterInside": "AuctionMaster",
+    "neighbors": [
+      "StartWarehouse",
+      "VendorsHome",
+      "One-way Pathway"
+    ]
+  },
+  "VendorsHome": {
+    "characterInside": "Vendor",
+    "neighbors": [
+      "StartWarehouse",
+      "AuctionHouse",
+      "One-way Pathway"
+    ]
   },
   "characters": [
     {

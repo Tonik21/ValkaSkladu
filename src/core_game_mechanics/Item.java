@@ -1,5 +1,4 @@
 package core_game_mechanics;
-//Itemy se budou scalovat podle toho v jakem Warehousu se StorageRoom nachazi
 public class Item {
     private String nameOfItem;
     private double rarity;
@@ -11,5 +10,27 @@ public class Item {
         this.basePrice = basePrice;
     }
 
+    public String getNameOfItem() {
+        return nameOfItem;
+    }
 
+    public void setNameOfItem(String nameOfItem) {
+        this.nameOfItem = nameOfItem;
+    }
+
+    public double getRarity() {
+        return rarity;
+    }
+
+    public void setRarity(double rarity) {
+        this.rarity = rarity;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
+    }
 }

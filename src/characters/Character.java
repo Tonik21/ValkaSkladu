@@ -6,6 +6,9 @@ public class Character {
     private String nameOfCharacter;
     private Room Location;
 
+    public Character() {
+    }
+
     public Character(String nameOfCharacter, Room location) {
         this.nameOfCharacter = nameOfCharacter;
         Location = location;

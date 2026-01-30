@@ -3,16 +3,17 @@ package rooms;
 import characters.Character;
 
 import java.util.List;
-
+//TODO UDELAT HASHMAP NA SEVER VYCHOD ZAPAD, I NA JSONU
 public abstract class Room {
     private String nameOfLocation;
     private Character characterInside;
-    private List<Room> sisterLocations;
+    private List<Room> neighbors;
+
 
     public Room(String nameOfLocation, Character characterInside, List<Room> sisterLocations) {
         this.nameOfLocation = nameOfLocation;
         this.characterInside = characterInside;
-        this.sisterLocations = sisterLocations;
+        this.neighbors = sisterLocations;
     }
 
     public String getNameOfLocation() {
@@ -22,7 +23,14 @@ public abstract class Room {
     public void setNameOfLocation(String nameOfLocation) {
         this.nameOfLocation = nameOfLocation;
     }
-
+    //TODO dodelat na Hashmapu exitu
+    public void printOutAvailableLocations(){
+        System.out.println(" Adjacent Locations ");
+        for (Room room : neighbors){
+            int index = 0;
+            System.out.println(++index + " " + room.getNameOfLocation());
+        }
+    }
     public Character getCharacterInside() {
         return characterInside;
     }
@@ -31,11 +39,11 @@ public abstract class Room {
         this.characterInside = characterInside;
     }
 
-    public List<Room> getSisterLocations() {
-        return sisterLocations;
+    public List<Room> getNeighbors() {
+        return neighbors;
     }
 
-    public void setSisterLocations(List<Room> sisterLocations) {
-        this.sisterLocations = sisterLocations;
+    public void setNeighbors(List<Room> neighbors) {
+        this.neighbors = neighbors;
     }
 }
