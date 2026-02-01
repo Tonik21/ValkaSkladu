@@ -2,14 +2,15 @@ package rooms;
 
 import characters.Character;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Warehouse extends Room {
     private double itemRarityMultiplier;
     private int entranceFee;
 
-    public Warehouse(String name, Character character, List<Room> sisterLocations, double itemRarityMultiplier, int entranceFee) {
-        super(name, character, sisterLocations);
+    public Warehouse(String name, Character character, HashMap<String,Room> neighbours, double itemRarityMultiplier, int entranceFee) {
+        super(name, character, neighbours);
         this.itemRarityMultiplier = itemRarityMultiplier;
         this.entranceFee = entranceFee;
     }

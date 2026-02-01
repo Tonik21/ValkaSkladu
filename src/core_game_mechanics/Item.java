@@ -10,6 +10,9 @@ public class Item {
         this.basePrice = basePrice;
     }
 
+    public Item() {
+    }
+
     public String getNameOfItem() {
         return nameOfItem;
     }

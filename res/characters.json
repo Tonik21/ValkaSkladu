@@ -1,0 +1,25 @@
+{
+  "characters": [
+    {
+      "name": "Vendor",
+      "Location": [
+        "VendorsHouse",
+        "StartWarehouse",
+        "MediumWarehouse",
+        "HardWarehouse"
+      ]
+    },
+    {
+      "name": "AuctionMaster",
+      "Location": "AuctionHouse"
+    },
+    {
+      "name": "Richard Hangar",
+      "Location": "Richards Office"
+    },
+    {
+      "name": "Micheal Storage",
+      "Location": "StartWarehouse"
+    }
+  ]
+}

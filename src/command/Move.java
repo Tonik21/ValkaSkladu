@@ -11,6 +11,14 @@ public class Move implements Command{
         Room room = player.getLocation();
         room.printOutAvailableLocations();
         switch (direction){
+            case "north":
+                player.setLocation(room.directionsToNeighbours.get(direction));
+            case "south":
+                player.setLocation(room.directionsToNeighbours.get(direction));
+            case "west":
+                player.setLocation(room.directionsToNeighbours.get(direction));
+            case "east":
+                player.setLocation(room.directionsToNeighbours.get(direction));
 
         }
         return "";

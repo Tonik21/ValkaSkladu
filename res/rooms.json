@@ -1,0 +1,79 @@
+{
+  "Rooms": {
+    "Warehouses": [
+      {
+        "nameOfLocation": "StartWarehouse",
+        "characterInside": "Vendor",
+        "neighbors": {
+          "north": "MediumWarehouse",
+          "south": "AuctionHouse",
+          "east": "VendorsHome",
+          "west": "One-way Pathway"
+        },
+        "itemRarityMultiplier": 1,
+        "entranceFee": 0
+      },
+      {
+        "nameOfLocation": "MediumWarehouse",
+        "characterInside": "Vendor",
+        "neighbors": {
+          "north": "HardWarehouse",
+          "south": "StartWarehouse",
+          "west": "One-way Pathway"
+        },
+        "itemRarityMultiplier": 1.5,
+        "entranceFee": 5000
+      },
+      {
+        "nameOfLocation": "HardWarehouse",
+        "characterInside": "Vendor",
+        "neighbors": {
+          "north": "Gateway",
+          "south": "MediumWarehouse",
+          "west": "One-way Pathway"
+        },
+        "itemRarityMultiplier": 2,
+        "entranceFee": 15000
+      }
+    ],
+    "One-way Pathway": {
+      "characterInside": null,
+      "neighbors": {
+        "east": "StartWarehouse",
+        "north": "Gateway",
+        "south": "AuctionHouse",
+        "west": "VendorsHome"
+      }
+    },
+    "Gateway": {
+      "characterInside": null,
+      "neighbors": {
+        "north": "Richards Office",
+        "south": "HardWarehouse",
+        "west": "One-way Pathway"
+      }
+    },
+    "Richards Office": {
+      "characterInside": "Richard Hangar",
+      "neighbors": {
+        "south": "Gateway"
+      }
+    },
+    "AuctionHouse": {
+      "characterInside": "AuctionMaster",
+      "neighbors": {
+        "north": "StartWarehouse",
+        "west": "One-way Pathway",
+        "east": "VendorsHome"
+      }
+    },
+    "VendorsHome": {
+      "characterInside": "Vendor",
+      "neighbors": {
+        "west": "StartWarehouse",
+        "north": "One-way Pathway",
+        "south": "AuctionHouse"
+      }
+    }
+  }
+}
