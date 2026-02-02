@@ -1,0 +1,36 @@
+[
+  {
+    "nameOfLocation": "StartWarehouse",
+    "characterInside": "Vendor1",
+    "directionsToNeighbours": {
+      "north": "MediumWarehouse",
+      "south": "AuctionHouse",
+      "east": "VendorsHome",
+      "west": "One-way Pathway"
+    },
+    "itemRarityMultiplier": 1,
+    "entranceFee": 0
+  },
+  {
+    "nameOfLocation": "MediumWarehouse",
+    "characterInside": "Vendor2",
+    "directionsToNeighbours": {
+      "north": "HardWarehouse",
+      "south": "StartWarehouse",
+      "west": "One-way Pathway"
+    },
+    "itemRarityMultiplier": 1.5,
+    "entranceFee": 5000
+  },
+  {
+    "nameOfLocation": "HardWarehouse",
+    "characterInside": "Vendor3",
+    "directionsToNeighbours": {
+      "north": "Gateway",
+      "south": "MediumWarehouse",
+      "west": "One-way Pathway"
+    },
+    "itemRarityMultiplier": 2,
+    "entranceFee": 15000
+  }
+]

@@ -1,6 +1,6 @@
 package rooms;
 
-import characters.Character;
+import characters.InGameCharacter;
 import core_game_mechanics.Item;
 
 import java.util.HashMap;
@@ -12,8 +12,8 @@ public class StorageRoom extends Room{
     private Warehouse warehouse;
     private List<Item> itemsInside;
 
-    public StorageRoom(String nameOfLocation, Character characterInside, HashMap<String,Room> sisterLocations) {
-        super(nameOfLocation, characterInside, sisterLocations);
+    public StorageRoom(String nameOfLocation, String characterInside, HashMap<String,String> neighbors) {
+        super(nameOfLocation, characterInside, neighbors);
     }
 
     public void generateItems(){

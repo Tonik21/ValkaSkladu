@@ -1,17 +1,17 @@
 package rooms;
 
-import characters.Character;
+import characters.InGameCharacter;
 
 import java.util.HashMap;
 
 
-public abstract class Room {
+public class Room {
     private String nameOfLocation;
-    private Character characterInside;
-    public HashMap<String, Room> directionsToNeighbours;
+    private String characterInside;
+    public HashMap<String, String> directionsToNeighbours;
 
-
-    public Room(String nameOfLocation, Character characterInside, HashMap<String, Room> directionsToNeighbours) {
+    public Room(){}
+    public Room(String nameOfLocation, String characterInside, HashMap<String, String> directionsToNeighbours) {
         this.nameOfLocation = nameOfLocation;
         this.characterInside = characterInside;
         this.directionsToNeighbours = directionsToNeighbours;
@@ -33,19 +33,19 @@ public abstract class Room {
         System.out.print("              "+directionsToNeighbours.get("west"));
         System.out.println("       "+directionsToNeighbours.get("south"));
     }
-    public Character getCharacterInside() {
+    public String getCharacterInside() {
         return characterInside;
     }
 
-    public void setCharacterInside(Character characterInside) {
+    public void setCharacterInside(String characterInside) {
         this.characterInside = characterInside;
     }
 
-    public HashMap<String, Room> getDirectionsToNeighbours() {
+    public HashMap<String, String> getDirectionsToNeighbours() {
         return directionsToNeighbours;
     }
 
-    public void setDirectionsToNeighbours(HashMap<String, Room> directionsToNeighbours) {
+    public void setDirectionsToNeighbours(HashMap<String, String> directionsToNeighbours) {
         this.directionsToNeighbours = directionsToNeighbours;
     }
 }

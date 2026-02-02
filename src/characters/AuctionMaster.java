@@ -2,9 +2,9 @@ package characters;
 
 import rooms.Room;
 
-public class AuctionMaster extends Character {
-    public AuctionMaster(String name, Room location) {
-        super(name, location);
+public class AuctionMaster extends InGameCharacter {
+    public AuctionMaster(String name, String locationId) {
+        super(name, locationId);
     }
     public void startAuction(){
 

@@ -8,19 +8,19 @@ public class Move implements Command{
     //Room to Room movement
     @Override
     public String execute(String direction) {
-        Room room = player.getLocation();
-        room.printOutAvailableLocations();
-        switch (direction){
-            case "north":
-                player.setLocation(room.directionsToNeighbours.get(direction));
-            case "south":
-                player.setLocation(room.directionsToNeighbours.get(direction));
-            case "west":
-                player.setLocation(room.directionsToNeighbours.get(direction));
-            case "east":
-                player.setLocation(room.directionsToNeighbours.get(direction));
-
-        }
+//        Room room = player.getLocationId();
+//        room.printOutAvailableLocations();
+//        switch (direction){
+//            case "north":
+//                player.setLocationId(room.directionsToNeighbours.get(direction));
+//            case "south":
+//                player.setLocationId(room.directionsToNeighbours.get(direction));
+//            case "west":
+//                player.setLocationId(room.directionsToNeighbours.get(direction));
+//            case "east":
+//                player.setLocationId(room.directionsToNeighbours.get(direction));
+//
+//        }
         return "";
     }
 

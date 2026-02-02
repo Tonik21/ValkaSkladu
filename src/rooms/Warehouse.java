@@ -1,16 +1,15 @@
 package rooms;
 
-import characters.Character;
+import characters.InGameCharacter;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class Warehouse extends Room {
     private double itemRarityMultiplier;
     private int entranceFee;
-
-    public Warehouse(String name, Character character, HashMap<String,Room> neighbours, double itemRarityMultiplier, int entranceFee) {
-        super(name, character, neighbours);
+    public Warehouse(){}
+    public Warehouse(String name, String character, HashMap<String,String> directionsToNeighbours, double itemRarityMultiplier, int entranceFee) {
+        super(name, character, directionsToNeighbours);
         this.itemRarityMultiplier = itemRarityMultiplier;
         this.entranceFee = entranceFee;
     }
