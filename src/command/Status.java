@@ -1,10 +1,13 @@
 package command;
 
-public class Status implements Command{
+import characters.Player;
 
-    //print out status(money/debt rooms explored)
+public class Status implements Command{
+    private Player player;
+    //print out status(money)
     @Override
     public String execute(String Command) {
+        System.out.println(player.getMoney()+ " "+ player.getLocationRightNow());
         return "";
     }
 

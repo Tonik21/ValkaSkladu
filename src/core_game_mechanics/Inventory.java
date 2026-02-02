@@ -20,6 +20,12 @@ public class Inventory {
     public void removeItem(Item item) {
         itemsInside.remove(item);
     }
+    public void printOutInventory(Inventory inventory){
+        for (int i = 0; i < inventory.capacity; i++) {
+            System.out.println( inventory.getItemsInside().get(i));
+        }
+
+    }
 
     public int getCapacity() {
         return capacity;

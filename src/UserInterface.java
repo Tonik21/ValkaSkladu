@@ -1,5 +1,6 @@
 import command.*;
 import core_game_mechanics.Game;
+import core_game_mechanics.Item;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -28,11 +29,11 @@ public class UserInterface {
     public void recogniseCommand(String input){
         String[] commandSplit = input.split(" ");
         String commandKeyword = commandSplit[0];
-        String commandParameter = commandSplit[1];
-
         if (!commands.containsKey(input)){
             System.out.println("Command does not exist");
-        } else {
+            return;}
+        if (commandSplit.length>1) {
+            String commandParameter = commandSplit[1];
             String commandExecutionData = commands.get(commandKeyword).execute(commandParameter);
             System.out.println(commandExecutionData);
         }

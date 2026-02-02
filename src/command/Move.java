@@ -8,7 +8,6 @@ public class Move implements Command{
     //Room to Room movement
     @Override
     public String execute(String direction) {
-//        if (direction != )
 //        player.moveNextRoom(direction);
         return "";
     }

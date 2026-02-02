@@ -46,4 +46,13 @@ public class Room {
     public void setDirectionsToNeighbours(HashMap<String, String> directionsToNeighbours) {
         this.directionsToNeighbours = directionsToNeighbours;
     }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "nameOfLocation='" + nameOfLocation + '\'' +
+                ", characterInside='" + characterInside + '\'' +
+                ", directionsToNeighbours=" + directionsToNeighbours +
+                '}';
+    }
 }
