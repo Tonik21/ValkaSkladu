@@ -1,6 +1,5 @@
 package rooms;
 
-import characters.InGameCharacter;
 
 import java.util.HashMap;
 
@@ -16,7 +15,6 @@ public class Room {
         this.characterInside = characterInside;
         this.directionsToNeighbours = directionsToNeighbours;
     }
-
     public String getNameOfLocation() {
         return nameOfLocation;
     }

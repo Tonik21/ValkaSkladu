@@ -1,15 +1,19 @@
 package command;
 
-public class Endgame implements Command{
+import core_game_mechanics.Game;
 
-    //nastavi IsRunning na False
+public class Endgame implements Command{
+    private Game game;
+
+    public Endgame(Game game) {
+        this.game = game;
+    }
+
     @Override
     public String execute(String Command) {
-        return "";
+        game.endGame();
+        return "End of Game";
     }
 
-    @Override
-    public boolean exit() {
-        return false;
-    }
+
 }

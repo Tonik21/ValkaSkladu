@@ -1,8 +1,8 @@
 package command;
 
-public class Help implements Command{
-    //TODO NAKONEC
-    //prints out a list of all commands
+public class InventoryPrint implements Command{
+
+    //print Inventory
     @Override
     public String execute(String Command) {
         return "";

@@ -3,6 +3,33 @@ package core_game_mechanics;
 import java.util.ArrayList;
 
 public class Inventory {
-    private final int capacity = 3;
+    private int capacity = 3;
     public ArrayList<Item> itemsInside;
+
+    public Inventory(int capacity, ArrayList<Item> itemsInside) {
+        this.itemsInside = itemsInside;
+        this.capacity = capacity;
+    }
+
+    public void addItem(Item item) {
+        if (itemsInside.size() < capacity) {
+            itemsInside.add(item);
+        }
+    }
+
+    public void removeItem(Item item) {
+        itemsInside.remove(item);
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public ArrayList<Item> getItemsInside() {
+        return itemsInside;
+    }
+
+    public void setItemsInside(ArrayList<Item> itemsInside) {
+        this.itemsInside = itemsInside;
+    }
 }

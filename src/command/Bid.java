@@ -9,8 +9,5 @@ public class Bid implements Command{
         return "";
     }
 
-    @Override
-    public boolean exit() {
-        return false;
-    }
+
 }

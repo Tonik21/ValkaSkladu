@@ -1,10 +1,10 @@
 package core_game_mechanics;
 public class Item {
     private String nameOfItem;
-    private double rarity;
+    private int rarity;
     private double basePrice;
 
-    public Item(String nameOfItem, double rarity, double basePrice) {
+    public Item(String nameOfItem, int rarity, double basePrice) {
         this.nameOfItem = nameOfItem;
         this.rarity = rarity;
         this.basePrice = basePrice;
@@ -21,11 +21,11 @@ public class Item {
         this.nameOfItem = nameOfItem;
     }
 
-    public double getRarity() {
+    public int getRarity() {
         return rarity;
     }
 
-    public void setRarity(double rarity) {
+    public void setRarity(int rarity) {
         this.rarity = rarity;
     }
 
@@ -35,5 +35,14 @@ public class Item {
 
     public void setBasePrice(double basePrice) {
         this.basePrice = basePrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "nameOfItem='" + nameOfItem + '\'' +
+                ", rarity=" + rarity +
+                ", basePrice=" + basePrice +
+                '}';
     }
 }

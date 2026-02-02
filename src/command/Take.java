@@ -9,8 +9,5 @@ public class Take implements Command{
         return "";
     }
 
-    @Override
-    public boolean exit() {
-        return false;
-    }
+
 }

@@ -23,10 +23,5 @@
     {
       "nameOfCharacter": "Richard Hangar",
       "locationId": "Richards Office"
-    },
-    {
-      "nameOfCharacter": "Micheal Storage",
-      "locationId": "StartWarehouse"
     }
   ]
-}

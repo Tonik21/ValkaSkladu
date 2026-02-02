@@ -8,15 +8,17 @@ import rooms.Warehouse;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataLoader {
     ObjectMapper parser = new ObjectMapper();
-    public void loadItemData(){
+    List<Item> items = new ArrayList<>();
+    public List<Item> loadItemData(){
         try {
             InputStream input = new FileInputStream("res/items.json");
-            List<Item> items = parser.readValue(input, new TypeReference<List<Item>>(){});
-            System.out.println("test"+items);
+            items = parser.readValue(input, new TypeReference<List<Item>>(){});
+            return items;
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -24,11 +26,10 @@ public class DataLoader {
             throw new RuntimeException(e);
         }
     }
-    public void loadCharacterData(){
+    public List<InGameCharacter> loadCharacterData(){
         try {
             InputStream input = new FileInputStream("res/characters.json");
-            List<InGameCharacter> characters = parser.readValue(input, new TypeReference<List<InGameCharacter>>(){});
-            System.out.println("test"+characters);
+            return parser.readValue(input, new TypeReference<List<InGameCharacter>>(){});
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -36,11 +37,10 @@ public class DataLoader {
             throw new RuntimeException(e);
         }
     }
-    public void loadRoomData(){
+    public List<Room> loadRoomData(){
         try {
             InputStream input = new FileInputStream("res/rooms.json");
-            List<Room> rooms = parser.readValue(input, new TypeReference<List<Room>>(){});
-            System.out.println("test"+rooms);
+            return parser.readValue(input, new TypeReference<List<Room>>(){});
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -60,7 +60,5 @@ public class DataLoader {
             throw new RuntimeException(e);
         }
     }
-
-
 }
 

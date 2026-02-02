@@ -1,41 +1,40 @@
 [
-
-    {
-      "nameOfItem": "Sports Car",
-      "rarity": 0.001,
-      "basePrice": 100000
-    },
-    {
-      "nameOfItem": "A collection of rare sports cards",
-      "rarity": 0.01,
-      "basePrice": 4500
-    },
-    {
-      "nameOfItem": "Beat-up electronics",
-      "rarity": 0.40,
-      "basePrice": 320
-    },
-    {
-      "nameOfItem": "Golden ring",
-      "rarity": 0.1,
-      "basePrice": 750
-    },
-    {
-      "nameOfItem": "Old Coins",
-      "rarity": 0.3,
-      "basePrice": 500
-    },
-    {
-      "nameOfItem": "Golden Watch",
-      "rarity": 0.01,
-      "basePrice": 4500
-    },
-    {
-      "nameOfItem": "Old clothes",
-      "rarity": 0.6,
-      "basePrice": 200
-    }
-  ]
+  {
+    "nameOfItem": "Sports Car",
+    "rarity": 1,
+    "basePrice": 100000
+  },
+  {
+    "nameOfItem": "A collection of rare sports cards",
+    "rarity": 10,
+    "basePrice": 4500
+  },
+  {
+    "nameOfItem": "Golden Watch",
+    "rarity": 10,
+    "basePrice": 4500
+  },
+  {
+    "nameOfItem": "Golden ring",
+    "rarity": 100,
+    "basePrice": 750
+  },
+  {
+    "nameOfItem": "Old Coins",
+    "rarity": 300,
+    "basePrice": 500
+  },
+  {
+    "nameOfItem": "Beat-up electronics",
+    "rarity": 400,
+    "basePrice": 320
+  },
+  {
+    "nameOfItem": "Old clothes",
+    "rarity": 600,
+    "basePrice": 200
+  }
+]
 
 
 
