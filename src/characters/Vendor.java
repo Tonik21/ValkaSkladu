@@ -11,6 +11,6 @@ public class Vendor extends InGameCharacter {
 
     public void vendorsSell(Item item, Player pl1, Inventory inv1){
         pl1.addMoney(item.getBasePrice());
-        inv1.itemsInside.remove(item);
+        inv1.removeItem(item);
     }
 }

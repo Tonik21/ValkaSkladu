@@ -2,10 +2,12 @@ package characters;
 
 import command.InventoryPrint;
 import rooms.Room;
+import rooms.StorageRoom;
 
 public class Player {
     private String nameOfCharacter;
     private Room locationRightNow;
+    private StorageRoom roomBiddedOn;
     private int money;
     private InventoryPrint inventory;
 
@@ -24,16 +26,21 @@ public class Player {
         room.printOutAvailableLocations();
         switch (direction){
         case "north":
-
+//            locationRightNow = locationRightNow.getDirectionsToNeighbours();
         case "south":
 
         case "west":
 
         case "east":
 }
-
     }
-
+//    private int firstBidOnAuction(int bidAmount){
+//         int subsequentBid = roomBiddedOn.getStartingPrice() + bidAmount;
+//         return subsequentBid;
+//    }
+//    private int anotherBidOnAuction(int subsequentbid){
+//
+//    }
 
     public String getNameOfCharacter() {
         return nameOfCharacter;

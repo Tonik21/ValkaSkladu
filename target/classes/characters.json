@@ -2,26 +2,32 @@
   [
     {
       "nameOfCharacter": "Vendor1",
-      "locationId": "VendorsHouse"
+      "locationId": "VendorsHouse",
+      "dialogue": "Hi, do you want to sell your loot?"
     },
     {
       "nameOfCharacter": "Vendor2",
-      "locationId": "StartWarehouse"
+      "locationId": "StartWarehouse",
+      "dialogue": "Hello, participate in auctions to access storage rooms"
     },
     {
       "nameOfCharacter": "Vendor3",
-      "locationId": "MediumWarehouse"
+      "locationId": "MediumWarehouse",
+      "dialogue": "You will need to pay an entrance fee to access storage rooms"
     },
     {
       "nameOfCharacter": "Vendor4",
-      "locationId": "HardWarehouse"
+      "locationId": "HardWarehouse",
+      "dialogue": "You will need to pay an entrance fee to access storage rooms, you are so close to Richard don't get bankrupt"
     },
     {
       "nameOfCharacter": "AuctionMaster",
-      "locationId": "AuctionHouse"
+      "locationId": "AuctionHouse",
+      "dialogue": "Hello Dear Storage Man, do you want to take part in the Storage Auction?"
     },
     {
       "nameOfCharacter": "Richard Hangar",
-      "locationId": "Richards Office"
+      "locationId": "Richards Office",
+      "dialogue": "Hello Dear Friend, Want me to pay off your debts?"
     }
   ]
