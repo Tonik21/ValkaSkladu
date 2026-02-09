@@ -26,10 +26,10 @@ public class Room {
 
     public void printOutAvailableLocations() {
         System.out.println(" Adjacent Locations ");
-        System.out.println("       "+directionsToNeighbours.get("north"));
-        System.out.println(directionsToNeighbours.get("east"));
-        System.out.print("              "+directionsToNeighbours.get("west"));
-        System.out.println("       "+directionsToNeighbours.get("south"));
+        System.out.println("north "+directionsToNeighbours.get("north"));
+        System.out.println("east "+directionsToNeighbours.get("east"));
+        System.out.println("west "+directionsToNeighbours.get("west"));
+        System.out.println("south "+directionsToNeighbours.get("south"));
     }
     public String getCharacterInside() {
         return characterInside;

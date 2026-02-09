@@ -26,6 +26,8 @@ public class UserInterface {
         while(game.isRunning()){
             String input = sc.nextLine();
             recogniseCommand(input);
+            printAllStats();
+
         }
     }
 
@@ -54,5 +56,8 @@ public class UserInterface {
             System.out.println(commandExecutionData);
         }
 
+    }
+    public void printAllStats(){
+        game.getPlayer().getLocationRightNow().printOutAvailableLocations();
     }
 }

@@ -10,10 +10,7 @@ public class Move implements Command{
 
     @Override
     public String execute(String direction) {
-        return game.getPlayer().move(
-                direction,
-                game.getDataLoader().getRooms()
-        );
+        return game.getPlayer().move(direction, game.getRooms());
     }
 
 

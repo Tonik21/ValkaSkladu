@@ -19,8 +19,8 @@ public class Game {
     public void setup(){
         items = dataLoader.loadItemData();
         characters = dataLoader.loadCharacterData();
-        rooms.addAll(dataLoader.loadRoomData());
         rooms.addAll(dataLoader.loadWarehouseData());
+        rooms.addAll(dataLoader.loadRoomData());
 
 
         room = dataLoader.getWarehouses().get(0);

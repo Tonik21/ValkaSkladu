@@ -36,7 +36,7 @@ public class Player {
         }
         for (Room room : allRooms) {
             if (room.getNameOfLocation().equalsIgnoreCase(targetId)) {
-                locationRightNow = room;
+                setLocationRightNow(room);
                 return "You moved to " + room.getNameOfLocation();
             }
         }
