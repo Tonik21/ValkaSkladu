@@ -1,28 +1,77 @@
 package core_game_mechanics;
 
+import characters.InGameCharacter;
+import characters.Player;
+import rooms.Room;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    boolean isRunning;
+    private boolean isRunning;
+    private DataLoader dataLoader = new DataLoader();
     private List<Item> items = new ArrayList<>();
-    public void setup(){
-        DataLoader dataLoader = new DataLoader();
-        items = dataLoader.loadItemData();
-        dataLoader.loadCharacterData();
-        dataLoader.loadRoomData();
-        dataLoader.loadWarehouseData();
-    }
+    private List<InGameCharacter> characters = new ArrayList<>();
+    private List<Room> rooms = new ArrayList<>();
+    private Player player = new Player();
+    private Room room = new Room();
 
-    public void startGame(){
+    public void setup(){
+        items = dataLoader.loadItemData();
+        characters = dataLoader.loadCharacterData();
+        rooms.addAll(dataLoader.loadRoomData());
+        rooms.addAll(dataLoader.loadWarehouseData());
+
+
+        room = dataLoader.getWarehouses().get(0);
+        player.setLocationRightNow(room);
+        isRunning = true;
 
     }
     public void endGame(){
         isRunning = false;
     }
-
+    public String intro(){
+        return "==========================================================================\n" +
+                "                     V Í T E J  V  A U K Č N Í M  S V Ě T Ě\n" +
+                "==========================================================================\n" +
+                "\n" +
+                "Procitáš v chladném stínu Startovního skladu. Vzduch je cítit prachem a \n" +
+                "starým dřevem. V kapse tě tíží poslední hrst mincí a v ruce tiskneš \n" +
+                "dopis od Richarda Hangara.\n" +
+                "\n" +
+                "Tvůj úkol je jasný: Probojovat se skrze sklady, obchodovat s rozmanitými \n" +
+                "prodejci a ovládnout místní Aukční dům. Ale pozor – cesta do HardWarehousu \n" +
+                "není pro každého a AuctionMaster nebere ohledy na slabé hráče.\n" +
+                "\n" +
+                "Tvůj příběh začíná právě teď...\n" +
+                "==========================================================================";
+    }
     public List<Item> getItems() {
         return items;
     }
+    public DataLoader getDataLoader() {
+        return dataLoader;
+    }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public boolean isRunning() {
+        return isRunning;
+    }
+
+    public List<InGameCharacter> getCharacters() {
+        return characters;
+    }
+
+    public List<Room> getRooms() {
+        return rooms;
+    }
 }
+

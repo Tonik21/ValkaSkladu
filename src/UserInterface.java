@@ -1,6 +1,6 @@
 import command.*;
 import core_game_mechanics.Game;
-import core_game_mechanics.Item;
+
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -10,10 +10,25 @@ public class UserInterface {
     private HashMap<String, Command> commands;
     private Scanner sc;
 
-    public UserInterface(Game game, HashMap<String, Command> commands) {
-        this.game = game;
-        this.commands = commands;
+
+    public UserInterface() {
+        this.game = new Game();
+        this.commands = new HashMap<>();
+        this.sc = new Scanner(System.in);
     }
+
+
+    public void startGame(){
+        game.setup();
+        loadCommands();
+        System.out.println(game.intro());
+        game.getRoom().printOutAvailableLocations();
+        while(game.isRunning()){
+            String input = sc.nextLine();
+            recogniseCommand(input);
+        }
+    }
+
 
     public void loadCommands(){
         commands.put("bid", new Bid());
@@ -21,15 +36,16 @@ public class UserInterface {
         commands.put("help", new Help());
         commands.put("interact", new Interact());
         commands.put("inventory", new InventoryPrint());
-        commands.put("move", new Move());
+        commands.put("move", new Move(game));
         commands.put("status", new Status());
         commands.put("take", new Take());
         commands.put("talk", new Talk());
     }
+    //TODO vyresit jednoslovny commandy
     public void recogniseCommand(String input){
         String[] commandSplit = input.split(" ");
         String commandKeyword = commandSplit[0];
-        if (!commands.containsKey(input)){
+        if (!commands.containsKey(commandKeyword)){
             System.out.println("Command does not exist");
             return;}
         if (commandSplit.length>1) {

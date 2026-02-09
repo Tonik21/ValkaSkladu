@@ -15,6 +15,10 @@ public class StorageRoom{
     private int sizeOfArraylist = 3;
     private List<Item> itemsInside = new ArrayList<>();;
     private Game game;
+    private int currentHighestBid;
+
+    public StorageRoom() {
+    }
 
     public StorageRoom(int roomId, Game game) {
         this.roomId = roomId;
@@ -70,5 +74,13 @@ public class StorageRoom{
 
     public void setStartingPrice(int startingPrice) {
         this.startingPrice = startingPrice;
+    }
+
+    public int getCurrentHighestBid() {
+        return currentHighestBid;
+    }
+
+    public void setCurrentHighestBid(int currentHighestBid) {
+        this.currentHighestBid = currentHighestBid;
     }
 }

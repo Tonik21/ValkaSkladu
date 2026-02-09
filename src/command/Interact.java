@@ -1,9 +1,9 @@
 package command;
 
-import rooms.StorageRoom;
+import core_game_mechanics.Game;
 
 public class Interact implements Command{
-    private StorageRoom targetRoom;
+    private Game game;
     //since there's not a movement between rooms and storage rooms just interact with Storage room (appraise items/take them)
     @Override
     public String execute(String Command) {

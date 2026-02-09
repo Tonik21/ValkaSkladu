@@ -40,9 +40,6 @@ public class Item {
     @Override
     public String toString() {
         return "+" +
-                "nameOfItem='" + nameOfItem + '\'' +
-                ", rarity=" + rarity +
-                ", basePrice=" + basePrice +
-                '}';
+                "nameOfItem " + nameOfItem;
     }
 }

@@ -1,15 +1,19 @@
 package characters;
 
 import command.InventoryPrint;
+import core_game_mechanics.Inventory;
 import rooms.Room;
 import rooms.StorageRoom;
+
+import java.util.List;
 
 public class Player {
     private String nameOfCharacter;
     private Room locationRightNow;
     private StorageRoom roomBiddedOn;
     private int money;
-    private InventoryPrint inventory;
+    private Inventory inventory;
+    private boolean inAuction;
 
 
     public Player() {
@@ -21,26 +25,23 @@ public class Player {
     public void removeMoney(int amount){
         money -= amount;
     }
-    public void moveNextRoom(String direction){
-    Room room = locationRightNow;
-        room.printOutAvailableLocations();
-        switch (direction){
-        case "north":
-//            locationRightNow = locationRightNow.getDirectionsToNeighbours();
-        case "south":
+    public String move(String direction, List<Room> allRooms) {
+        if (locationRightNow == null) {
+            return "You are nowhere. This should not happen.";
+        }
+        String targetId = locationRightNow.getDirectionsToNeighbours().get(direction.toLowerCase());
 
-        case "west":
-
-        case "east":
-}
+        if (targetId == null) {
+            return "You can't go that way.";
+        }
+        for (Room room : allRooms) {
+            if (room.getNameOfLocation().equalsIgnoreCase(targetId)) {
+                locationRightNow = room;
+                return "You moved to " + room.getNameOfLocation();
+            }
+        }
+        return "Target location not found.";
     }
-//    private int firstBidOnAuction(int bidAmount){
-//         int subsequentBid = roomBiddedOn.getStartingPrice() + bidAmount;
-//         return subsequentBid;
-//    }
-//    private int anotherBidOnAuction(int subsequentbid){
-//
-//    }
 
     public String getNameOfCharacter() {
         return nameOfCharacter;
@@ -66,11 +67,27 @@ public class Player {
         this.locationRightNow = locationRightNow;
     }
 
-    public InventoryPrint getInventory() {
+    public Inventory getInventory() {
         return inventory;
     }
 
-    public void setInventory(InventoryPrint inventory) {
+    public void setInventory(Inventory inventory) {
         this.inventory = inventory;
+    }
+
+    public StorageRoom getRoomBiddedOn() {
+        return roomBiddedOn;
+    }
+
+    public void setRoomBiddedOn(StorageRoom roomBiddedOn) {
+        this.roomBiddedOn = roomBiddedOn;
+    }
+
+    public boolean isInAuction() {
+        return inAuction;
+    }
+
+    public void setInAuction(boolean inAuction) {
+        this.inAuction = inAuction;
     }
 }

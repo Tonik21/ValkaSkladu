@@ -1,6 +1,4 @@
 package characters;
-
-
 public class InGameCharacter {
     private String nameOfCharacter;
     private String locationId;

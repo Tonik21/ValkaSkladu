@@ -8,7 +8,7 @@
       "east": "VendorsHome",
       "west": "One-way Pathway"
     },
-    "itemRarityMultiplier": 1,
+    "itemPriceMultiplier": 1,
     "entranceFee": 0
   },
   {
@@ -19,7 +19,7 @@
       "south": "StartWarehouse",
       "west": "One-way Pathway"
     },
-    "itemRarityMultiplier": 1.5,
+    "itemPriceMultiplier": 1.5,
     "entranceFee": 5000
   },
   {
@@ -30,7 +30,7 @@
       "south": "MediumWarehouse",
       "west": "One-way Pathway"
     },
-    "itemRarityMultiplier": 2,
+    "itemPriceMultiplier": 2,
     "entranceFee": 15000
   }
 ]
