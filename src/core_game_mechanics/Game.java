@@ -1,5 +1,6 @@
 package core_game_mechanics;
 
+import auction_function.Auction;
 import characters.InGameCharacter;
 import characters.Player;
 import rooms.Room;
@@ -14,7 +15,7 @@ public class Game {
     private List<InGameCharacter> characters = new ArrayList<>();
     private List<Room> rooms = new ArrayList<>();
     private Player player = new Player();
-    private Room room = new Room();
+    private Auction auction = new Auction();
 
     public void setup(){
         items = dataLoader.loadItemData();
@@ -23,8 +24,8 @@ public class Game {
         rooms.addAll(dataLoader.loadRoomData());
 
 
-        room = dataLoader.getWarehouses().get(0);
-        player.setLocationRightNow(room);
+        player.setLocationRightNow(dataLoader.getWarehouses().get(0));
+        player.setInventory(new Inventory());
         isRunning = true;
 
     }
@@ -58,9 +59,6 @@ public class Game {
         return player;
     }
 
-    public Room getRoom() {
-        return room;
-    }
 
     public boolean isRunning() {
         return isRunning;
@@ -72,6 +70,10 @@ public class Game {
 
     public List<Room> getRooms() {
         return rooms;
+    }
+
+    public Auction getAuction() {
+        return auction;
     }
 }
 

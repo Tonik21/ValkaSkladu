@@ -17,6 +17,9 @@ public class Player {
 
 
     public Player() {
+        this.inventory = new Inventory();
+        this.money = 500;
+
     }
 
     public void addMoney(double amount){
@@ -26,8 +29,10 @@ public class Player {
         money -= amount;
     }
     public String move(String direction, List<Room> allRooms) {
-        if (locationRightNow == null) {
-            return "You are nowhere. This should not happen.";
+        if (locationRightNow.getNameOfLocation().equals("Gateway") && direction.equalsIgnoreCase("north")) {
+            if (this.money < 10000) {
+                return "Gateway has a lock with a moneysign on it there says need to get 10000";
+            }
         }
         String targetId = locationRightNow.getDirectionsToNeighbours().get(direction.toLowerCase());
 

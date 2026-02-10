@@ -14,6 +14,10 @@ public class Bid implements Command {
             return "Zrovna neprobíhá žádná aukce!";
         }
         int amount = Integer.parseInt(parameter);
+
+        if (amount == 0){
+            return game.getAuction().endAuction();
+        }
         StorageRoom room = p.getRoomBiddedOn();
         if (amount > p.getMoney()) {
             return "Nemáš dost peněz!";
@@ -22,6 +26,7 @@ public class Bid implements Command {
             return "Musíš přihodit víc než " + room.getCurrentHighestBid();
         }
         room.setCurrentHighestBid(amount);
+        String botBid = game.getAuction().botBidRealization();
         return "Bid " + amount + " on storage with id " + room.getRoomId();
     }
 }

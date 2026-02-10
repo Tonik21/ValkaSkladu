@@ -1,31 +1,37 @@
 package rooms;
 
-import core_game_mechanics.Game;
-
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Warehouse extends Room {
     private double itemPriceMultiplier;
     private int entranceFee;
-    private StorageRoom storageRoom;
-    private Game game;
+    private List<StorageRoom> storageRooms;
+
     public Warehouse(){}
-    public Warehouse(String name, String character, HashMap<String,String> directionsToNeighbours, double itemRarityMultiplier, int entranceFee) {
+
+    public Warehouse(String name, String character, HashMap<String,String> directionsToNeighbours,
+                     double itemRarityMultiplier, int entranceFee) {
         super(name, character, directionsToNeighbours);
         this.itemPriceMultiplier = itemRarityMultiplier;
         this.entranceFee = entranceFee;
-        this.game = new Game();
-        this.storageRoom = new StorageRoom(1, game);
+        this.storageRooms = new ArrayList<>();
+    }
+    public void addStorageRoom(StorageRoom room) {
+        storageRooms.add(room);
     }
 
-
-    public void accessStorageRoom(int roomId){
-        if(roomId == storageRoom.getRoomId()){
-            System.out.println("items generated");
-            storageRoom.generateItems();
-        }else {
-            System.out.println("Id unaivable");
-        };
+    public List<StorageRoom> getStorageRoom() {
+        return storageRooms;
+    }
+    public StorageRoom findStorageRoom(int roomId) {
+        for (StorageRoom room : storageRooms) {
+            if (room.getRoomId() == roomId) {
+                return room;
+            }
+        }
+        return null;
     }
     public double getItemPriceMultiplier() {
         return itemPriceMultiplier;

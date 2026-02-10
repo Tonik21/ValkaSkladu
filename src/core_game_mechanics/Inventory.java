@@ -3,9 +3,13 @@ package core_game_mechanics;
 import java.util.ArrayList;
 
 public class Inventory {
-    private int capacity = 3;
+    private int capacity;
     public ArrayList<Item> itemsInside;
 
+    public Inventory(){
+        this.capacity = 3;
+        this.itemsInside = new ArrayList<>();
+    }
     public Inventory(int capacity, ArrayList<Item> itemsInside) {
         this.itemsInside = itemsInside;
         this.capacity = capacity;
@@ -21,11 +25,18 @@ public class Inventory {
         itemsInside.remove(item);
     }
 
-    public void printOutInventory(Inventory inventory){
-        for (int i = 0; i < inventory.capacity; i++) {
-            System.out.println( inventory.getItemsInside().get(i));
+    public void printOutInventory(){
+        for (Item item: itemsInside) {
+            System.out.println("-> "+item.getNameOfItem());
         }
-
+    }
+    public Item findItem(String name){
+        for (Item item : itemsInside){
+            if(item.getNameOfItem().equalsIgnoreCase(name)){
+                return item;
+            }
+        }
+        return null;
     }
 
     public int getCapacity() {

@@ -2,7 +2,7 @@
   [
     {
       "nameOfCharacter": "Vendor1",
-      "locationId": "VendorsHouse",
+      "locationId": "VendorsHome",
       "dialogue": "Hi, do you want to sell your loot?"
     },
     {

@@ -1,19 +1,20 @@
 package command;
 
+import core_game_mechanics.Game;
 import core_game_mechanics.Inventory;
 import core_game_mechanics.Item;
 
 public class Take implements Command{
-    private Item item;
-    private Inventory inventory;
+   private Game game;
 
-    public Take() {
+    public Take(Game game) {
+        this.game = game;
     }
 
     //put item in room to inventory
     @Override
     public String execute(String Command) {
-        inventory.addItem(item);
+        game.getPlayer().getInventory().addItem(game.ge);
         return "vzals item";
     }
 

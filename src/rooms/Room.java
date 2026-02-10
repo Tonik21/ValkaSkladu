@@ -23,14 +23,6 @@ public class Room {
         this.nameOfLocation = nameOfLocation;
     }
 
-
-    public void printOutAvailableLocations() {
-        System.out.println(" Adjacent Locations ");
-        System.out.println("north "+directionsToNeighbours.get("north"));
-        System.out.println("east "+directionsToNeighbours.get("east"));
-        System.out.println("west "+directionsToNeighbours.get("west"));
-        System.out.println("south "+directionsToNeighbours.get("south"));
-    }
     public String getCharacterInside() {
         return characterInside;
     }
