@@ -25,7 +25,6 @@ public class StorageRoom {
     public void generateItems(List<Item> availableItems) {
         for (int i = 0; i < sizeOfArraylist; i++) {
             itemsInside.add(generateItem(availableItems));
-            System.out.println(itemsInside.get(i));
         }
     }
 

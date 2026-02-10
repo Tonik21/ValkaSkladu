@@ -18,7 +18,7 @@ public class Player {
 
     public Player() {
         this.inventory = new Inventory();
-        this.money = 500;
+        this.money = 5000000;
 
     }
 

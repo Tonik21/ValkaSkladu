@@ -37,16 +37,17 @@ public class UserInterface {
 
 
     public void loadCommands(){
-        commands.put("bid", new Bid());
+        commands.put("bid", new Bid(game));
         commands.put("endgame", new Endgame(game));
         commands.put("help", new Help());
-        commands.put("interact", new Interact());
+        commands.put("interact", new Interact(game));
         commands.put("inventory", new InventoryPrint(game));
         commands.put("move", new Move(game));
-        commands.put("status", new Status());
-        commands.put("take", new Take());
-        commands.put("talk", new Talk(game));
+        commands.put("status", new Status(game));
+        commands.put("take", new Take(game));
+        commands.put("talk", new Talk(game, sc));
         commands.put("sell", new Sell(game));
+        commands.put("hellyeah", new HellYeah(game));
     }
 
     public void recogniseCommand(String input){
@@ -66,7 +67,6 @@ public class UserInterface {
 
     }
     public void printStatus(){
-
         System.out.println("\n\nTvoje penize"+game.getPlayer().getMoney()+"\n\n=============");
     }
     public void printOutAvailableLocations() {

@@ -4,6 +4,8 @@ import auction_function.Auction;
 import characters.InGameCharacter;
 import characters.Player;
 import rooms.Room;
+import rooms.StorageRoom;
+import rooms.Warehouse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +24,11 @@ public class Game {
         characters = dataLoader.loadCharacterData();
         rooms.addAll(dataLoader.loadWarehouseData());
         rooms.addAll(dataLoader.loadRoomData());
-
-
+        for (Warehouse warehouse : dataLoader.getWarehouses()) {
+            for (int i = 1; i <= 10; i++) {
+                warehouse.addStorageRoom(new StorageRoom(i));
+            }
+        }
         player.setLocationRightNow(dataLoader.getWarehouses().get(0));
         player.setInventory(new Inventory());
         isRunning = true;

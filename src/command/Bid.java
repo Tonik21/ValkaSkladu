@@ -7,6 +7,10 @@ import rooms.StorageRoom;
 public class Bid implements Command {
     private Game game;
 
+    public Bid(Game game) {
+        this.game = game;
+    }
+
     @Override
     public String execute(String parameter) {
         Player p = game.getPlayer();
@@ -20,13 +24,13 @@ public class Bid implements Command {
         }
         StorageRoom room = p.getRoomBiddedOn();
         if (amount > p.getMoney()) {
-            return "Nemáš dost peněz!";
+            return "no money!";
         }
         if (amount <= room.getCurrentHighestBid()) {
-            return "Musíš přihodit víc než " + room.getCurrentHighestBid();
+            return "you must bid higher than " + room.getCurrentHighestBid();
         }
         room.setCurrentHighestBid(amount);
         String botBid = game.getAuction().botBidRealization();
-        return "Bid " + amount + " on storage with id " + room.getRoomId();
+        return "Bid " + amount + " on storage with id " + room.getRoomId() + "  "+ botBid;
     }
 }

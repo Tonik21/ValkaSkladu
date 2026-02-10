@@ -13,7 +13,7 @@
   },
   {
     "nameOfLocation": "MediumWarehouse",
-    "characterInside": "Vendor2",
+    "characterInside": null,
     "directionsToNeighbours": {
       "north": "HardWarehouse",
       "south": "StartWarehouse",
