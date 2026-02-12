@@ -42,16 +42,47 @@ public class Game {
                 "                     V Í T E J  V  A U K Č N Í M  S V Ě T Ě\n" +
                 "==========================================================================\n" +
                 "\n" +
-                "Procitáš v chladném stínu Startovního skladu. Vzduch je cítit prachem a \n" +
-                "starým dřevem. V kapse tě tíží poslední hrst mincí a v ruce tiskneš \n" +
-                "dopis od Richarda Hangara.\n" +
+                "Procitáš v chladném stínu Startovního skladu. Vzduch je nasycen prachem\n" +
+                "a starým dřevem. V kapse tě tíží poslední hrst mincí a v ruce tiskneš\n" +
+                "pomačkaný dopis od legendárního obchodníka Richarda Hangara.\n" +
                 "\n" +
-                "Tvůj úkol je jasný: Probojovat se skrze sklady, obchodovat s rozmanitými \n" +
-                "prodejci a ovládnout místní Aukční dům. Ale pozor – cesta do HardWarehousu \n" +
-                "není pro každého a AuctionMaster nebere ohledy na slabé hráče.\n" +
+                "Jeho slova stále zní v tvé hlavě: \"Pokud chceš uspět v tomto světě,\n" +
+                "musíš ovládnout umění obchodu. Sklady skrývají poklady, aukce přinášejí\n" +
+                "příležitosti a vendoři čekají na ty, kteří mají odvahu.\"\n" +
                 "\n" +
-                "Tvůj příběh začíná právě teď...\n" +
-                "==========================================================================";
+                "Tvůj cíl je jasný – probojovat se přes Startovní, Střední a Těžký sklad,\n" +
+                "vydělat dost peněz a najít cestu k Richardovi. Ale pozor: cesta do\n" +
+                "Gateway vyžaduje 10 000 Kč a AuctionMaster nebere ohledy na chudáky.\n" +
+                "\n" +
+                "==========================================================================\n" +
+                "                            D O S T U P N É  P Ř Í K A Z Y\n" +
+                "==========================================================================\n" +
+                "\n" +
+                "POHYB & NAVIGACE:\n" +
+                "  move <směr>       - Pohyb do sousední lokace (north/south/east/west)\n" +
+                "  status            - Zobrazí tvé aktuální peníze a lokaci\n" +
+                "\n" +
+                "INVENTÁŘ & PŘEDMĚTY:\n" +
+                "  inventory         - Zobrazí obsah tvého inventáře\n" +
+                "  take <předmět>    - Sebere předmět ze StorageRoom\n" +
+                "  sell <předmět>    - Prodá předmět vendorovi (musíš být u vendora)\n" +
+                "\n" +
+                "INTERAKCE S POSTAVAMI:\n" +
+                "  talk              - Promluv s postavou v místnosti\n" +
+                "  interact          - Zaplať vstupné do warehouse / přístup ke StorageRoom\n" +
+                "\n" +
+                "AUKCE:\n" +
+                "  bid <částka>      - Přihod v probíhající aukci\n" +
+                "  bid 0             - Ukonči aukci a zjisti, jestli jsi vyhrál\n" +
+                "\n" +
+                "SYSTÉM:\n" +
+                "  help              - Zobrazí nápovědu\n" +
+                "  hellyeah          - Ukonči hru (pouze u Richarda Hangara)\n" +
+                "  endgame           - Okamžitě ukonči hru\n" +
+                "\n" +
+                "==========================================================================\n" +
+                "                      T V Ů J  P Ř Í B Ě H  Z A Č Í N Á . . .\n" +
+                "==========================================================================\n";
     }
     public List<Item> getItems() {
         return items;

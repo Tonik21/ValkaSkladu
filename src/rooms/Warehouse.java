@@ -1,6 +1,6 @@
 package rooms;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,15 +10,13 @@ public class Warehouse extends Room {
     private double itemPriceMultiplier;
     private int entranceFee;
     private List<StorageRoom> storageRooms = new ArrayList<>();
-    @JsonIgnore
     private Boolean feepaid;
 
     public Warehouse() {
-        this.feepaid = false;
     }
 
-    public Warehouse(String name, String character, HashMap<String, String> directionsToNeighbours, double itemRarityMultiplier, int entranceFee, boolean feepaid) {
-        super(name, character, directionsToNeighbours);
+    public Warehouse(String name, String character, HashMap<String, String> directionsToNeighbours, double itemRarityMultiplier, int entranceFee, boolean feepaid, String[] availabelCommands) {
+        super(name, character, availabelCommands, directionsToNeighbours);
         this.itemPriceMultiplier = itemRarityMultiplier;
         this.entranceFee = entranceFee;
         this.storageRooms = new ArrayList<>();

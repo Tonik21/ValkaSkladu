@@ -43,7 +43,7 @@ public class Talk implements Command{
 
                 String response = scanner.nextLine();
 
-                if (response.equalsIgnoreCase("ano") || response.equalsIgnoreCase("yes")) {
+                if (response.equalsIgnoreCase("yes")) {
                     Random random = new Random();
                     int roomId = random.nextInt(1000);
                     int startingPrice = 300 + random.nextInt(700);

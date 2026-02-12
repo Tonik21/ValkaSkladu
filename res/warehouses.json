@@ -8,8 +8,18 @@
       "east": "VendorsHome",
       "west": "One-way Pathway"
     },
+    "availableCommands": [
+      "move",
+      "help",
+      "inventory",
+      "endgame",
+      "status",
+      "talk",
+      "interact"
+    ],
     "itemPriceMultiplier": 1,
-    "entranceFee": 0
+    "entranceFee": 0,
+    "feepaid" : false
   },
   {
     "nameOfLocation": "MediumWarehouse",
@@ -19,9 +29,20 @@
       "south": "StartWarehouse",
       "west": "One-way Pathway"
     },
+    "availableCommands": [
+      "move",
+      "help",
+      "inventory",
+      "endgame",
+      "status",
+      "talk",
+      "interact"
+    ],
     "itemPriceMultiplier": 1.5,
-    "entranceFee": 5000
+    "entranceFee": 5000,
+    "feepaid" : false
   },
+
   {
     "nameOfLocation": "HardWarehouse",
     "characterInside": "Vendor3",
@@ -30,7 +51,17 @@
       "south": "MediumWarehouse",
       "west": "One-way Pathway"
     },
+    "availableCommands": [
+      "move",
+      "help",
+      "inventory",
+      "endgame",
+      "status",
+      "talk",
+      "interact"
+    ],
     "itemPriceMultiplier": 2,
-    "entranceFee": 15000
+    "entranceFee": 15000,
+    "feepaid" : false
   }
 ]

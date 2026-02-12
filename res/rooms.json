@@ -7,7 +7,14 @@
       "north": "Gateway",
       "south": "AuctionHouse",
       "west": "VendorsHome"
-    }
+    },
+    "availableCommands": [
+      "move",
+      "help",
+      "inventory",
+      "endgame",
+      "status"
+    ]
   },
   {
     "nameOfLocation": "Gateway",
@@ -16,14 +23,30 @@
       "north": "Richards Office",
       "south": "HardWarehouse",
       "west": "One-way Pathway"
-    }
+    },
+    "availableCommands": [
+      "move",
+      "help",
+      "inventory",
+      "endgame",
+      "status"
+    ]
   },
   {
     "nameOfLocation": "Richards Office",
     "characterInside": "Richard Hangar",
     "directionsToNeighbours": {
       "south": "Gateway"
-    }
+    },
+    "availableCommands": [
+      "move",
+      "help",
+      "inventory",
+      "endgame",
+      "status",
+      "talk",
+      "hellyeah"
+    ]
   },
   {
     "nameOfLocation": "AuctionHouse",
@@ -32,7 +55,16 @@
       "north": "StartWarehouse",
       "west": "One-way Pathway",
       "east": "VendorsHome"
-    }
+    },
+    "availableCommands": [
+      "move",
+      "help",
+      "inventory",
+      "endgame",
+      "status",
+      "talk",
+      "bid"
+    ]
   },
   {
     "nameOfLocation": "VendorsHome",
@@ -41,6 +73,15 @@
       "west": "StartWarehouse",
       "north": "One-way Pathway",
       "south": "AuctionHouse"
-    }
+    },
+    "availableCommands": [
+      "move",
+      "help",
+      "inventory",
+      "endgame",
+      "status",
+      "talk",
+      "sell"
+    ]
   }
 ]

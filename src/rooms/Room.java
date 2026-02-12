@@ -8,13 +8,20 @@ public class Room {
     private String nameOfLocation;
     private String characterInside;
     public HashMap<String, String> directionsToNeighbours;
-
+    private String[] availableCommands;
     public Room(){}
-    public Room(String nameOfLocation, String characterInside, HashMap<String, String> directionsToNeighbours) {
+
+    public Room(String nameOfLocation, String characterInside, String[] availableCommands, HashMap<String, String> directionsToNeighbours) {
         this.nameOfLocation = nameOfLocation;
         this.characterInside = characterInside;
+        this.availableCommands = availableCommands;
         this.directionsToNeighbours = directionsToNeighbours;
     }
+
+    public String[] getAvailableCommands() {
+        return availableCommands;
+    }
+
     public String getNameOfLocation() {
         return nameOfLocation;
     }
@@ -41,10 +48,6 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "nameOfLocation='" + nameOfLocation + '\'' +
-                ", characterInside='" + characterInside + '\'' +
-                ", directionsToNeighbours=" + directionsToNeighbours +
-                '}';
+        return "You are in " + nameOfLocation;
     }
 }

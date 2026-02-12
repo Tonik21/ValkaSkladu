@@ -1,8 +1,10 @@
 import command.*;
 import core_game_mechanics.Game;
 import core_game_mechanics.Item;
+import rooms.Room;
 
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -27,19 +29,27 @@ public class UserInterface {
         game.getPlayer().getInventory().addItem(new Item("GoldenRing", 100, 750));
         while(game.isRunning()){
             String input = sc.nextLine();
-            if (input.equals("move")){
-                printOutAvailableLocations();
-            }
-            recogniseCommand(input);
-
-        }
+                Room currentRoom = game.getPlayer().getLocationRightNow();
+                String commandKeyword = input.split(" ")[0];
+                boolean isAvailable = false;
+                for (int j = 0; j < currentRoom.getAvailableCommands().length; j++) {
+                    if (commandKeyword.equals(currentRoom.getAvailableCommands()[j])){
+                            isAvailable = true;
+                    }}
+                    if(isAvailable){
+                        recogniseCommand(input);
+                    } else {
+                        System.out.println("Command currently unavailable\n"+ "available commands: ");
+                        System.out.println(Arrays.toString(currentRoom.getAvailableCommands()));
+                    }
+                        }
     }
 
 
     public void loadCommands(){
         commands.put("bid", new Bid(game));
         commands.put("endgame", new Endgame(game));
-        commands.put("help", new Help());
+        commands.put("help", new Help(game));
         commands.put("interact", new Interact(game));
         commands.put("inventory", new InventoryPrint(game));
         commands.put("move", new Move(game));

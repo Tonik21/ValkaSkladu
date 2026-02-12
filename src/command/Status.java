@@ -14,8 +14,7 @@ public class Status implements Command{
     @Override
     public String execute(String Command) {
         Player player = game.getPlayer();
-        System.out.println(player.getMoney()+ " "+ player.getLocationRightNow());
-        return "";
+        return "you are currently worth: " + player.getMoney()+ " $  "+ player.getLocationRightNow();
     }
 
 
