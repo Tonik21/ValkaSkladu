@@ -39,7 +39,7 @@ public class Game {
     }
     public String intro(){
         return "==========================================================================\n" +
-                "                     V Í T E J  V  A U K Č N Í M  S V Ě T Ě\n" +
+                "               V Í T E J  V E   S K L A D O V É M   S V Ě T Ě\n" +
                 "==========================================================================\n" +
                 "\n" +
                 "Procitáš v chladném stínu Startovního skladu. Vzduch je nasycen prachem\n" +
@@ -52,7 +52,7 @@ public class Game {
                 "\n" +
                 "Tvůj cíl je jasný – probojovat se přes Startovní, Střední a Těžký sklad,\n" +
                 "vydělat dost peněz a najít cestu k Richardovi. Ale pozor: cesta do\n" +
-                "Gateway vyžaduje 10 000 Kč a AuctionMaster nebere ohledy na chudáky.\n" +
+                "Gateway vyžaduje 10 000 $ a AuctionMaster nebere ohledy na chudáky.\n" +
                 "\n" +
                 "==========================================================================\n" +
                 "                            D O S T U P N É  P Ř Í K A Z Y\n" +
