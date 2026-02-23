@@ -4,8 +4,6 @@ import core_game_mechanics.Inventory;
 import rooms.Room;
 import rooms.StorageRoom;
 
-import java.util.List;
-
 public class Player {
     private Room locationRightNow;
     private StorageRoom roomBiddedOn;

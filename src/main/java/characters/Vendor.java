@@ -1,8 +1,6 @@
 package characters;
 
 
-import core_game_mechanics.Inventory;
-import core_game_mechanics.Item;
 import rooms.Warehouse;
 
 

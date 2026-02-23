@@ -1,6 +1,5 @@
 package rooms;
 
-import core_game_mechanics.Game;
 import core_game_mechanics.Item;
 
 import java.util.ArrayList;

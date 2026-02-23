@@ -1,8 +1,6 @@
 package command;
 
-import characters.InGameCharacter;
 import characters.Player;
-import characters.Vendor;
 import core_game_mechanics.Game;
 import core_game_mechanics.Item;
 import rooms.Room;
