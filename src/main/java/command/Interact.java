@@ -6,6 +6,9 @@ import rooms.Room;
 import rooms.StorageRoom;
 import rooms.Warehouse;
 
+/**
+ * prikaz Interact pro manipulaci s prvkama ve Warehouse
+ */
 public class Interact implements Command{
     private Game game;
 
@@ -13,6 +16,11 @@ public class Interact implements Command{
         this.game = game;
     }
 
+    /**
+     * metoda overuje zda lze otevrit Sklad a otevira sklady
+     * @param Command prikaz
+     * @return info o pruchodu prikazu
+     */
     @Override
     public String execute(String Command) {
         Player pl1 = game.getPlayer();

@@ -2,6 +2,9 @@ package command;
 import core_game_mechanics.Game;
 import rooms.Room;
 
+/**
+ * Prikaz provadi movement hrace
+ */
 public class Move implements Command{
     private Game game;
 
@@ -9,6 +12,11 @@ public class Move implements Command{
         this.game = game;
     }
 
+    /**
+     * posouva hrace do mistnosti, ktera je na zapsanem smeru a resi minimalni balanc na branu ke konci hry
+     * @param direction - smer north south west east
+     * @return info o prubehu prikazu
+     */
     @Override
     public String execute(String direction) {
 

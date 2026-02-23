@@ -12,16 +12,24 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * prikaz interaguje s postavou v mistnosti
+ */
 public class Talk implements Command{
     private Game game;
     Scanner scanner;
-    //interact with Character in room
+
 
     public Talk(Game game, Scanner scanner) {
         this.game = game;
         this.scanner = scanner;
     }
 
+    /**
+     * prikaz vytiskne dialog charaktera, ktery se nachazi ve stejny mistnosti, kdyz je to auction Master tak se hra uzivatele zepta jestli se chce zucastnit aukce a urcuje jaky sklad se bude 'aukcionovat'
+     * @param characterName - nepouzivan vzdy v mistnosti jedna postava :(
+     * @return info o prubehu prikazu
+     */
     @Override
     public String execute(String characterName) {
         Player player = game.getPlayer();
@@ -54,11 +62,13 @@ public class Talk implements Command{
                             break;
                         }
                     }
-                    List<StorageRoom> storageRooms = availableWarehouse.getStorageRooms();
-                    StorageRoom room = storageRooms.get(random.nextInt(storageRooms.size()));
-                    game.getAuction().startAuction(room, game.getPlayer());
+                    if (availableWarehouse!= null) {
+                        List<StorageRoom> storageRooms = availableWarehouse.getStorageRooms();
+                        StorageRoom room = storageRooms.get(random.nextInt(storageRooms.size()));
+                        game.getAuction().startAuction(room, game.getPlayer());
 
-                    return "Auction started for Storage Room #" + room.getRoomId();
+                        return "Auction started for Storage Room #" + room.getRoomId();
+                    }
                 } else {
                     return "ok, comeback anytime!";
                 }

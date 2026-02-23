@@ -1,4 +1,9 @@
 package core_game_mechanics;
+
+/**
+ * Trida uklada data o Hernich predmetech
+ */
+
 public class Item {
     private String nameOfItem;
     private int rarity;

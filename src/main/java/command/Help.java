@@ -2,6 +2,9 @@ package command;
 
 import core_game_mechanics.Game;
 
+/**
+ * prikaz tiskne vsechny prikazy a co delaji
+ */
 public class Help implements Command{
     private Game game;
 

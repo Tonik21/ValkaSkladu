@@ -3,6 +3,9 @@ package rooms;
 
 import java.util.HashMap;
 
+/**
+ * Trida uklada informace o Mistnosti
+ */
 
 public class Room {
     private String nameOfLocation;

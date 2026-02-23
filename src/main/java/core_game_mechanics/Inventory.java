@@ -2,6 +2,9 @@ package core_game_mechanics;
 
 import java.util.ArrayList;
 
+/**
+ * Trida manipuluje z Inventarem
+ */
 public class Inventory {
     private int capacity;
     public ArrayList<Item> itemsInside;
@@ -15,6 +18,10 @@ public class Inventory {
         this.capacity = capacity;
     }
 
+    /**
+     * Pridani itemu do inventare
+     * @param item
+     */
     public void addItem(Item item) {
         if (itemsInside.size() < capacity) {
             itemsInside.add(item);
@@ -30,6 +37,12 @@ public class Inventory {
             System.out.println("-> "+item.getNameOfItem());
         }
     }
+
+    /**
+     * Hleda Item v inventari
+     * @param name jmeno itemu
+     * @return item
+     */
     public Item findItem(String name){
         for (Item item : itemsInside){
             if(item.getNameOfItem().equalsIgnoreCase(name)){

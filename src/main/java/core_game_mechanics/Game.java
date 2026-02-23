@@ -10,6 +10,9 @@ import rooms.Warehouse;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Trida Game setupuje celou hru
+ */
 public class Game {
     private boolean isRunning;
     private DataLoader dataLoader = new DataLoader();
@@ -19,6 +22,9 @@ public class Game {
     private Player player = new Player();
     private Auction auction = new Auction();
 
+    /**
+     * setup dava do listu Data z Jsonu generuje sklady, a nastavuje startovni pozici hry
+     */
     public void setup(){
         items = dataLoader.loadItemData();
         characters = dataLoader.loadCharacterData();
@@ -34,7 +40,6 @@ public class Game {
             }
         }
         player.setLocationRightNow(dataLoader.getWarehouses().get(0));
-        player.setInventory(new Inventory());
         isRunning = true;
 
     }

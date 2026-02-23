@@ -11,12 +11,20 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Trida Dataloader Nacita data z resources
+ */
 public class DataLoader {
     ObjectMapper parser = new ObjectMapper();
     List<Item> items = new ArrayList<>();
     List<InGameCharacter> characters = new ArrayList<>();
     List<Room> rooms = new ArrayList<>();
     List<Warehouse> warehouses = new ArrayList<>();
+
+    /**
+     * nacita data o itemech
+     * @return List itemu z jsonu
+     */
     public List<Item> loadItemData(){
         try {
             InputStream input = new FileInputStream("res/items.json");
@@ -29,6 +37,11 @@ public class DataLoader {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * nacita data o NPCckach
+     * @return List NPCcek z jsonu
+     */
     public List<InGameCharacter> loadCharacterData(){
         try {
             InputStream input = new FileInputStream("res/characters.json");
@@ -40,6 +53,10 @@ public class DataLoader {
             throw new RuntimeException(e);
         }
     }
+    /**
+     * nacita data o Mistnostech
+     * @return List Mistnosti z jsonu
+     */
     public List<Room> loadRoomData(){
         try {
             InputStream input = new FileInputStream("res/rooms.json");
@@ -51,6 +68,10 @@ public class DataLoader {
             throw new RuntimeException(e);
         }
     }
+    /**
+     * nacita data o Skladistich
+     * @return List Skladistich z jsonu
+     */
     public List<Warehouse> loadWarehouseData(){
         try {
             InputStream input = new FileInputStream("res/warehouses.json");

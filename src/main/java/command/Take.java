@@ -5,6 +5,9 @@ import characters.Player;
 import core_game_mechanics.Item;
 import rooms.StorageRoom;
 
+/**
+ * prikaz bere item ze skladu a dava do Inventare
+ */
 public class Take implements Command{
    private Game game;
 
@@ -12,6 +15,11 @@ public class Take implements Command{
         this.game = game;
     }
 
+    /**
+     * pridava do inventare item ze skladu
+     * @param itemName - jmeno itemu
+     * @return info o prubehu prikazu
+     */
     @Override
     public String execute(String itemName) {
         Player player = game.getPlayer();

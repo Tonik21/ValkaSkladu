@@ -3,6 +3,9 @@ package command;
 import core_game_mechanics.Game;
 import core_game_mechanics.Inventory;
 
+/**
+ * prikaz vytiskne inventar
+ */
 public class InventoryPrint implements Command{
     Game game;
 
@@ -15,7 +18,7 @@ public class InventoryPrint implements Command{
     public String execute(String Command) {
         Inventory inventory = game.getPlayer().getInventory();
         if (inventory.getItemsInside().isEmpty()){
-            return "empty";
+            return "inventory is empty";
         }
         inventory.printOutInventory();
         return "=============Inventory Printed=============";

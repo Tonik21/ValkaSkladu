@@ -3,9 +3,12 @@ package command;
 import characters.Player;
 import core_game_mechanics.Game;
 
+/**
+ * prikaz tiskne status o hraci
+ */
 public class Status implements Command{
     private Game game;
-    //print out status(money)
+
 
     public Status(Game game) {
         this.game = game;

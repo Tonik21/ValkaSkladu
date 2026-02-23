@@ -4,6 +4,9 @@ import characters.Player;
 import core_game_mechanics.Game;
 import rooms.StorageRoom;
 
+/**
+ * prikaz prihazuje do aukce
+ */
 public class Bid implements Command {
     private Game game;
 
@@ -32,7 +35,7 @@ public class Bid implements Command {
             return "you must bid higher than " + room.getCurrentHighestBid();
         }
         room.setCurrentHighestBid(amount);
-        String botBid = game.getAuction().botBidRealization();
-        return "Bid " + amount + " on storage with id " + room.getRoomId() + "  "+ botBid;
+
+        return "Bid " + amount + " on storage with id " + room.getRoomId();
     }
 }

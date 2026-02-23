@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * trida o skladistich jsou v nem sklady
+ */
 public class Warehouse extends Room {
     private double itemPriceMultiplier;
     private int entranceFee;
@@ -27,6 +30,11 @@ public class Warehouse extends Room {
         storageRooms.add(room);
     }
 
+    /**
+     * hleda sklad
+     * @param roomId id skladu
+     * @return sklad
+     */
     public StorageRoom findStorageRoom(int roomId) {
         for (StorageRoom room : storageRooms) {
             if (room.getRoomId() == roomId) {

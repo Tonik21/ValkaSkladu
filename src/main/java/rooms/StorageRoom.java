@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
+/**
+ * Trida StorageRoom resi itemy v nich a jejich generaci
+ */
 public class StorageRoom {
     private int roomId;
     private Warehouse warehouse;
@@ -21,6 +23,11 @@ public class StorageRoom {
         this.roomId = roomId;
     }
 
+    /**
+     * pridava do Skladu vygenerovane Itemy a pripocitava k cene multiplier Skladiste, dela to kopie, aby se nemenila base cena Itemu
+     * @param availableItems - List itemu
+     * @param mult - koeficient ceny dle skladiste
+     */
     public void generateItems(List<Item> availableItems, double mult) {
         for (int i = 0; i < sizeOfArraylist; i++) {
             Item rolledItem = generateItem(availableItems);
@@ -37,6 +44,11 @@ public class StorageRoom {
         }
     }
 
+    /**
+     * Generuje podle skveleho algoritmu Itemy podle Rarity
+     * @param availableItems List Itemu
+     * @return Item
+     */
     public Item generateItem(List<Item> availableItems) {
         Random rnd1 = new Random();
         int sumOfRarities = 0;

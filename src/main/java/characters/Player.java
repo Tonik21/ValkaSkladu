@@ -5,7 +5,8 @@ import rooms.Room;
 import rooms.StorageRoom;
 
 /**
- * Toto je třída Player, ukládá aktualní informace o hráčovi
+ * třída Player, ukládá aktualní informace o hráčovi
+ *
  */
 public class Player {
     private Room locationRightNow;
@@ -14,6 +15,9 @@ public class Player {
     private Inventory inventory;
     private boolean inAuction;
 
+    /**
+     * konstruktor nastavi hrace na start hry
+     */
     public Player() {
         this.inventory = new Inventory();
         this.money = 1000;

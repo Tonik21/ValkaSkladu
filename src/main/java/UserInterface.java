@@ -7,6 +7,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * Trida UserInterface, Dela gameLoop, loaduje a zpracovava commandy
+ *
+ */
 public class UserInterface {
 
     public Game game;
@@ -20,7 +24,9 @@ public class UserInterface {
         this.sc = new Scanner(System.in);
     }
 
-
+    /**
+     * main game loop, kontroluje zda lze command pouzit
+     */
     public void startGame() {
         game.setup();
         loadCommands();
@@ -45,7 +51,9 @@ public class UserInterface {
         }
     }
 
-
+    /**
+     * spojuje keywordy commandu a instance jejich tridy
+     */
     public void loadCommands() {
         commands.put("bid", new Bid(game));
         commands.put("endgame", new Endgame(game));
@@ -60,6 +68,10 @@ public class UserInterface {
         commands.put("hellyeah", new HellYeah(game));
     }
 
+    /**
+     * zpracovava prikaz napsan uzivatelem
+     * @param input od uzivatele
+     */
     public void recogniseCommand(String input) {
         String[] commandSplit = input.split(" ");
         String commandKeyword = commandSplit[0];

@@ -1,4 +1,8 @@
 package characters;
+
+/**
+ * Trida k NPCckam
+ */
 public class InGameCharacter {
     private String nameOfCharacter;
     private String locationId;

@@ -3,13 +3,22 @@ package auction_function;
 import characters.Player;
 import rooms.StorageRoom;
 
+/**
+ * Trida Auction resi aukci
+ */
 public class Auction {
-    private Player pl1 ;
+    private Player pl1;
     private StorageRoom currentRoom;
     private Bot bot = new Bot();
-    public void startAuction(StorageRoom room, Player pl1){
+
+    /**
+     * Zapina aukci, nastavi se vsechny nastaveni pro zacatek aukce a vytiskne informace k tomu
+     * @param room - sklad o, ktery bude hrac bojovat
+     * @param pl1 - hrac
+     */
+    public void startAuction(StorageRoom room, Player pl1) {
         this.pl1 = pl1;
-        this.currentRoom=room;
+        this.currentRoom = room;
         pl1.setInAuction(true);
         pl1.setRoomBiddedOn(room);
         bot.setBidCount(0);
@@ -20,17 +29,22 @@ public class Auction {
         System.out.println("use bid <amount>");
         System.out.println("to end bid 0");
     }
-    //TODO bot bidding
-    public String botBidRealization(){
+
+    /**
+     * metoda pouziva metody bota s aktualnima hodnotama
+     * @return vraci akci bota
+     */
+    public String botBidRealization() {
         int botBid = bot.bidAmountCalc(currentRoom.getCurrentHighestBid());
-        if (botBid>0){
+        if (botBid > 0) {
             currentRoom.setCurrentHighestBid(botBid);
             return "bot bids" + botBid;
         }
         return "bot doesnt bid";
     }
-    public String endAuction(){
-        if (!pl1.isInAuction()){
+
+    public String endAuction() {
+        if (!pl1.isInAuction()) {
             return "no Auction going on";
         }
         pl1.setInAuction(false);
