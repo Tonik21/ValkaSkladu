@@ -16,7 +16,7 @@ public class Help implements Command{
                 "Interact <StorageRoomId> or to pay a warehouse enterance fee\n" +
                 "Talk - invokes dialogue of character\n" +
                 "inventory - prints out inventory\n" +
-                "status - prints out status" +
+                "status - prints out status\n" +
                 "sell <ItemName>\n" +
                 "Help\n" +
                 "bid <amount>\n" +

@@ -11,12 +11,14 @@ public class Bid implements Command {
         this.game = game;
     }
 
+    /**
+     *
+     * @param parameter
+     * @return
+     */
     @Override
     public String execute(String parameter) {
         Player p = game.getPlayer();
-        if (!p.isInAuction()) {
-            return "Zrovna neprobíhá žádná aukce!";
-        }
         int amount = Integer.parseInt(parameter);
 
         if (amount == 0){

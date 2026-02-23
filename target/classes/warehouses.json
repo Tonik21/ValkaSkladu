@@ -15,7 +15,8 @@
       "endgame",
       "status",
       "talk",
-      "interact"
+      "interact",
+      "take"
     ],
     "itemPriceMultiplier": 1,
     "entranceFee": 0,
@@ -36,7 +37,8 @@
       "endgame",
       "status",
       "talk",
-      "interact"
+      "interact",
+      "take"
     ],
     "itemPriceMultiplier": 1.5,
     "entranceFee": 5000,
@@ -58,7 +60,8 @@
       "endgame",
       "status",
       "talk",
-      "interact"
+      "interact",
+      "take"
     ],
     "itemPriceMultiplier": 2,
     "entranceFee": 15000,

@@ -15,19 +15,15 @@ public class Sell implements Command {
     @Override
     public String execute(String itemName) {
         Player player = game.getPlayer();
-        Room currentRoom = player.getLocationRightNow();
 
-        if (!currentRoom.getNameOfLocation().equals("VendorsHome")) {
-            return "Nejsi u vendora";
-        }
         Item item = player.getInventory().findItem(itemName);
         if (item == null) {
-            return "Nemáš předmět: " + itemName;
+            return "You dont have : " + itemName;
         }
 
         player.getInventory().removeItem(item);
         player.addMoney(item.getBasePrice());
 
-        return "Prodal jsi " + item.getNameOfItem() + " za " + item.getBasePrice() + " Kč";
+        return "You sold " + item.getNameOfItem() + " for " + item.getBasePrice();
     }
 }

@@ -4,13 +4,15 @@ import core_game_mechanics.Inventory;
 import rooms.Room;
 import rooms.StorageRoom;
 
+/**
+ * Toto je třída Player, ukládá aktualní informace o hráčovi
+ */
 public class Player {
     private Room locationRightNow;
     private StorageRoom roomBiddedOn;
     private int money;
     private Inventory inventory;
     private boolean inAuction;
-
 
     public Player() {
         this.inventory = new Inventory();

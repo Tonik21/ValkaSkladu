@@ -12,19 +12,18 @@ public class Take implements Command{
         this.game = game;
     }
 
-    //put item in room to inventory
     @Override
     public String execute(String itemName) {
         Player player = game.getPlayer();
         StorageRoom storageRoom = player.getRoomBiddedOn();
 
         if (storageRoom == null) {
-            return "Nemáš přístup k žádné StorageRoom! Použij 'access <ID>' nejdřív.";
+            return "you did not open a storage room! use 'interact <ID>'";
         }
         Item item = storageRoom.findItem(itemName);
 
         if (item == null) {
-            return "Předmět '" + itemName + "' není v této StorageRoom.";
+            return "Item '" + itemName + "' Is not in the StorageRoom";
         }
 
         if (player.getInventory().getItemsInside().size() >= player.getInventory().getCapacity()) {
@@ -34,7 +33,7 @@ public class Take implements Command{
         storageRoom.removeItem(item);
         player.getInventory().addItem(item);
 
-        return "Vzal jsi: " + item.getNameOfItem();
+        return "you took: " + item.getNameOfItem();
     }
 
 }

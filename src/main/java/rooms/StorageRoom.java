@@ -21,9 +21,19 @@ public class StorageRoom {
         this.roomId = roomId;
     }
 
-    public void generateItems(List<Item> availableItems) {
+    public void generateItems(List<Item> availableItems, double mult) {
         for (int i = 0; i < sizeOfArraylist; i++) {
-            itemsInside.add(generateItem(availableItems));
+            Item rolledItem = generateItem(availableItems);
+            if (rolledItem != null) {
+
+                double adjustedPrice = (rolledItem.getBasePrice() * mult);
+                Item itemCopy = new Item(
+                        rolledItem.getNameOfItem(),
+                        rolledItem.getRarity(),
+                        adjustedPrice
+                );
+                itemsInside.add(itemCopy);
+            }
         }
     }
 
@@ -35,7 +45,7 @@ public class StorageRoom {
         }
         int roll = rnd1.nextInt(0, sumOfRarities);
         for (Item item : availableItems){
-            if (roll <= item.getRarity()){
+            if (roll < item.getRarity()){
                 return item;
             }
             roll -= item.getRarity();

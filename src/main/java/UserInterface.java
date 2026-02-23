@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-    private Game game;
+    public Game game;
     private HashMap<String, Command> commands;
     private Scanner sc;
 
@@ -31,8 +31,8 @@ public class UserInterface {
             Room currentRoom = game.getPlayer().getLocationRightNow();
             String commandKeyword = input.split(" ")[0];
             boolean isAvailable = false;
-            for (int j = 0; j < currentRoom.getAvailableCommands().length; j++) {
-                if (commandKeyword.equals(currentRoom.getAvailableCommands()[j])) {
+            for (int i = 0; i < currentRoom.getAvailableCommands().length; i++) {
+                if (commandKeyword.equals(currentRoom.getAvailableCommands()[i])) {
                     isAvailable = true;
                 }
             }
@@ -76,10 +76,6 @@ public class UserInterface {
             System.out.println(commandExecutionData);
         }
 
-    }
-
-    public void printStatus() {
-        System.out.println("\n\nTvoje penize" + game.getPlayer().getMoney() + "\n\n=============");
     }
 
     public void printOutAvailableLocations() {

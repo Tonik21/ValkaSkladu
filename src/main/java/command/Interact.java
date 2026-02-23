@@ -17,9 +17,6 @@ public class Interact implements Command{
     public String execute(String Command) {
         Player pl1 = game.getPlayer();
         Warehouse warehouse = (Warehouse) game.getPlayer().getLocationRightNow();
-        Room room = game.getPlayer().getLocationRightNow();
-        if (room.getNameOfLocation().equals("Gateway")){
-        }
         if (!warehouse.getFeepaid()){
             int fee = warehouse.getEntranceFee();
             if (pl1.getMoney()<fee){
@@ -30,16 +27,15 @@ public class Interact implements Command{
             return "you payed the entrance fee";
         }
         if (Command.isEmpty()) {
-            return "use the format: interact <ID StorageRoom>";
+            return "use the format: interact <ID StorageRoom>(1-10)";
         }
 
         int roomID = Integer.parseInt(Command);
-        StorageRoom roomAccessed = warehouse.findStorageRoom(roomID );
-        if (roomAccessed == null) {
-            roomAccessed = new StorageRoom(roomID);
-            warehouse.addStorageRoom(roomAccessed);
+        StorageRoom roomAccessed = warehouse.findStorageRoom(roomID);
+        if (roomAccessed == null){
+            return "this storage room does not exist";
         }
-        roomAccessed.generateItems(game.getItems());
+        pl1.setRoomBiddedOn(roomAccessed);
         return "StorageRoom opened there lie "+roomAccessed.getItemsInside();
     }
 

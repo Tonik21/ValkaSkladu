@@ -22,9 +22,6 @@ public class Auction {
     }
     //TODO bot bidding
     public String botBidRealization(){
-        if (currentRoom==null){
-            return "";
-        }
         int botBid = bot.bidAmountCalc(currentRoom.getCurrentHighestBid());
         if (botBid>0){
             currentRoom.setCurrentHighestBid(botBid);
@@ -40,7 +37,7 @@ public class Auction {
         if (currentRoom.getCurrentHighestBid() <= pl1.getMoney()) {
             pl1.removeMoney(currentRoom.getCurrentHighestBid());
 
-            return "you won the auciton for " + currentRoom.getCurrentHighestBid();
+            return "you won the auction for " + currentRoom.getCurrentHighestBid();
 
         } else {
             pl1.setRoomBiddedOn(null);

@@ -5,8 +5,10 @@ import characters.Player;
 import core_game_mechanics.Game;
 import rooms.Room;
 import rooms.StorageRoom;
+import rooms.Warehouse;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -45,16 +47,18 @@ public class Talk implements Command{
 
                 if (response.equalsIgnoreCase("yes")) {
                     Random random = new Random();
-                    int roomId = random.nextInt(1000);
-                    int startingPrice = 300 + random.nextInt(700);
-
-                    StorageRoom room = new StorageRoom(roomId);
-                    room.setStartingPrice(startingPrice);
-                    room.generateItems(game.getItems());
-
+                    Warehouse availableWarehouse = null;
+                    for (Warehouse warehouse : game.getDataLoader().getWarehouses()) {
+                        if (warehouse.getFeepaid()) {
+                            availableWarehouse = warehouse;
+                            break;
+                        }
+                    }
+                    List<StorageRoom> storageRooms = availableWarehouse.getStorageRooms();
+                    StorageRoom room = storageRooms.get(random.nextInt(storageRooms.size()));
                     game.getAuction().startAuction(room, game.getPlayer());
 
-                    return "Auction started for Storage Room #" + roomId;
+                    return "Auction started for Storage Room #" + room.getRoomId();
                 } else {
                     return "ok, comeback anytime!";
                 }

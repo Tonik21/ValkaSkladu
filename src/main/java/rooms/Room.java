@@ -26,8 +26,8 @@ public class Room {
         return nameOfLocation;
     }
 
-    public void setNameOfLocation(String nameOfLocation) {
-        this.nameOfLocation = nameOfLocation;
+    public HashMap<String, String> getDirectionsToNeighbours() {
+        return directionsToNeighbours;
     }
 
     public String getCharacterInside() {
@@ -36,14 +36,6 @@ public class Room {
 
     public void setCharacterInside(String characterInside) {
         this.characterInside = characterInside;
-    }
-
-    public HashMap<String, String> getDirectionsToNeighbours() {
-        return directionsToNeighbours;
-    }
-
-    public void setDirectionsToNeighbours(HashMap<String, String> directionsToNeighbours) {
-        this.directionsToNeighbours = directionsToNeighbours;
     }
 
     @Override

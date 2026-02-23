@@ -25,8 +25,12 @@ public class Game {
         rooms.addAll(dataLoader.loadWarehouseData());
         rooms.addAll(dataLoader.loadRoomData());
         for (Warehouse warehouse : dataLoader.getWarehouses()) {
+            double multiplier = warehouse.getItemPriceMultiplier();
             for (int i = 1; i <= 10; i++) {
-                warehouse.addStorageRoom(new StorageRoom(i));
+                StorageRoom room = new StorageRoom(i);
+                room.setStartingPrice(300 + (int) (i * multiplier*10));
+                room.generateItems(items, multiplier);
+                warehouse.addStorageRoom(room);
             }
         }
         player.setLocationRightNow(dataLoader.getWarehouses().get(0));
