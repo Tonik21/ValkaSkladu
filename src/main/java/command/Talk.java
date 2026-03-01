@@ -55,21 +55,25 @@ public class Talk implements Command{
 
                 if (response.equalsIgnoreCase("yes")) {
                     Random random = new Random();
-                    Warehouse availableWarehouse = null;
+                    Warehouse bestWarehouse = null;
                     for (Warehouse warehouse : game.getDataLoader().getWarehouses()) {
                         if (warehouse.getFeepaid()) {
-                            availableWarehouse = warehouse;
-                            break;
+                            if (bestWarehouse == null||warehouse.getItemPriceMultiplier()>bestWarehouse.getItemPriceMultiplier()){
+                                bestWarehouse = warehouse;
+                            }
                         }
                     }
-                    if (availableWarehouse!= null) {
-                        List<StorageRoom> storageRooms = availableWarehouse.getStorageRooms();
+                    if (bestWarehouse!= null) {
+                        List<StorageRoom> storageRooms = bestWarehouse.getStorageRooms();
+                        if (storageRooms.isEmpty()){
+                            game.generateStorageRoomsToWarehouse();
+                        }
                         StorageRoom room = storageRooms.get(random.nextInt(storageRooms.size()));
                         game.getAuction().startAuction(room, game.getPlayer());
 
                         return "Auction started for Storage Room #" + room.getRoomId();
                     }
-                } else {
+                } else if (response.equalsIgnoreCase("no")){
                     return "ok, comeback anytime!";
                 }
 

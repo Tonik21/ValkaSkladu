@@ -20,7 +20,7 @@
     ],
     "itemPriceMultiplier": 1,
     "entranceFee": 0,
-    "feepaid" : false
+    "feepaid" : true
   },
   {
     "nameOfLocation": "MediumWarehouse",

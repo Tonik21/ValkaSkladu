@@ -13,10 +13,6 @@ public class Inventory {
         this.capacity = 3;
         this.itemsInside = new ArrayList<>();
     }
-    public Inventory(int capacity, ArrayList<Item> itemsInside) {
-        this.itemsInside = itemsInside;
-        this.capacity = capacity;
-    }
 
     /**
      * Pridani itemu do inventare

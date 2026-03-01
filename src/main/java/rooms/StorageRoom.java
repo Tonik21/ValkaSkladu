@@ -16,6 +16,7 @@ public class StorageRoom {
     private int sizeOfArraylist = 3;
     private List<Item> itemsInside = new ArrayList<>();
     private int currentHighestBid;
+    private boolean isLocked = true;
 
     public StorageRoom() {}
 
@@ -45,7 +46,7 @@ public class StorageRoom {
     }
 
     /**
-     * Generuje podle skveleho algoritmu Itemy podle Rarity
+     * Generuje podle skveleho algoritmu generace Itemu podle Rarity
      * @param availableItems List Itemu
      * @return Item
      */
@@ -74,6 +75,14 @@ public class StorageRoom {
         return null;
     }
 
+    public void setLocked(boolean locked) {
+        isLocked = locked;
+    }
+
+    public boolean isLocked() {
+        return isLocked;
+    }
+
     public void removeItem(Item item) {
         itemsInside.remove(item);
     }
@@ -86,17 +95,6 @@ public class StorageRoom {
         return roomId;
     }
 
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
-    }
-
-    public Warehouse getWarehouse() {
-        return warehouse;
-    }
-
-    public void setWarehouse(Warehouse warehouse) {
-        this.warehouse = warehouse;
-    }
 
     public int getStartingPrice() {
         return startingPrice;

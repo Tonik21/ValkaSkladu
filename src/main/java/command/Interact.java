@@ -43,6 +43,9 @@ public class Interact implements Command{
         if (roomAccessed == null){
             return "this storage room does not exist";
         }
+        if (roomAccessed.isLocked()){
+            return "The room you are trying to access is Locked. To unlock it participate in the Auction";
+        }
         pl1.setRoomBiddedOn(roomAccessed);
         return "StorageRoom opened there lie "+roomAccessed.getItemsInside();
     }

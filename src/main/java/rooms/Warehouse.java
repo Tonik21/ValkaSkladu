@@ -18,13 +18,6 @@ public class Warehouse extends Room {
     public Warehouse() {
     }
 
-    public Warehouse(String name, String character, HashMap<String, String> directionsToNeighbours, double itemRarityMultiplier, int entranceFee, boolean feepaid, String[] availabelCommands) {
-        super(name, character, availabelCommands, directionsToNeighbours);
-        this.itemPriceMultiplier = itemRarityMultiplier;
-        this.entranceFee = entranceFee;
-        this.storageRooms = new ArrayList<>();
-        this.feepaid = false;
-    }
 
     public void addStorageRoom(StorageRoom room) {
         storageRooms.add(room);

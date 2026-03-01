@@ -38,7 +38,7 @@ public class Auction {
         int botBid = bot.bidAmountCalc(currentRoom.getCurrentHighestBid());
         if (botBid > 0) {
             currentRoom.setCurrentHighestBid(botBid);
-            return "bot bids" + botBid;
+            return "bot bids " + botBid;
         }
         return "bot doesnt bid";
     }
@@ -50,7 +50,7 @@ public class Auction {
         pl1.setInAuction(false);
         if (currentRoom.getCurrentHighestBid() <= pl1.getMoney()) {
             pl1.removeMoney(currentRoom.getCurrentHighestBid());
-
+            currentRoom.setLocked(false);
             return "you won the auction for " + currentRoom.getCurrentHighestBid();
 
         } else {

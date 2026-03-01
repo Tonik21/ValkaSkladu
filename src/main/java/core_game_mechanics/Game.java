@@ -30,15 +30,7 @@ public class Game {
         characters = dataLoader.loadCharacterData();
         rooms.addAll(dataLoader.loadWarehouseData());
         rooms.addAll(dataLoader.loadRoomData());
-        for (Warehouse warehouse : dataLoader.getWarehouses()) {
-            double multiplier = warehouse.getItemPriceMultiplier();
-            for (int i = 1; i <= 10; i++) {
-                StorageRoom room = new StorageRoom(i);
-                room.setStartingPrice(300 + (int) (i * multiplier*10));
-                room.generateItems(items, multiplier);
-                warehouse.addStorageRoom(room);
-            }
-        }
+        generateStorageRoomsToWarehouse();
         player.setLocationRightNow(dataLoader.getWarehouses().get(0));
         isRunning = true;
 
@@ -92,6 +84,17 @@ public class Game {
                 "==========================================================================\n" +
                 "                      T V Ů J  P Ř Í B Ě H  Z A Č Í N Á . . .\n" +
                 "==========================================================================\n";
+    }
+    public void generateStorageRoomsToWarehouse(){
+        for (Warehouse warehouse : dataLoader.getWarehouses()) {
+            double multiplier = warehouse.getItemPriceMultiplier();
+            for (int i = 1; i <= 20; i++) {
+                StorageRoom room = new StorageRoom(i);
+                room.setStartingPrice(300 + (int) (i * multiplier * 10));
+                room.generateItems(items, multiplier);
+                warehouse.addStorageRoom(room);
+            }
+        }
     }
     public List<Item> getItems() {
         return items;
