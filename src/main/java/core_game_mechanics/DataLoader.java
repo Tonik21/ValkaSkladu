@@ -27,7 +27,7 @@ public class DataLoader {
      */
     public List<Item> loadItemData(){
         try {
-            InputStream input = new FileInputStream("res/items.json");
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream("items.json");
             items = parser.readValue(input, new TypeReference<List<Item>>(){});
             return items;
 
@@ -44,7 +44,7 @@ public class DataLoader {
      */
     public List<InGameCharacter> loadCharacterData(){
         try {
-            InputStream input = new FileInputStream("res/characters.json");
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream("characters.json");
             characters = parser.readValue(input, new TypeReference<List<InGameCharacter>>(){});
             return characters;
         } catch (FileNotFoundException e) {
@@ -59,7 +59,7 @@ public class DataLoader {
      */
     public List<Room> loadRoomData(){
         try {
-            InputStream input = new FileInputStream("res/rooms.json");
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream("rooms.json");
             rooms = parser.readValue(input, new TypeReference<List<Room>>(){});
             return rooms;
         } catch (FileNotFoundException e) {
@@ -74,7 +74,7 @@ public class DataLoader {
      */
     public List<Warehouse> loadWarehouseData(){
         try {
-            InputStream input = new FileInputStream("res/warehouses.json");
+            InputStream input = DataLoader.class.getClassLoader().getResourceAsStream("warehouses.json");
             warehouses = parser.readValue(input, new TypeReference<List<Warehouse>>(){});
             return warehouses;
         } catch (FileNotFoundException e) {

@@ -16,7 +16,7 @@ public class Help implements Command{
     public String execute(String Command) {
         return "move <direction>\n" +
                 "endgame\n" +
-                "Interact <StorageRoomId> or to pay a warehouse enterance fee\n" +
+                "Interact <StorageRoomId> or to pay a warehouse entrance fee\n" +
                 "Talk - invokes dialogue of character\n" +
                 "inventory - prints out inventory\n" +
                 "status - prints out status\n" +
