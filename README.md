@@ -33,4 +33,4 @@ spustit .jar pres cmd, najdete si ho ve např. file exploreru a pak v cmd upřes
 hra by měla být spuštěna
 ## Požadavky pro start
 Počítač
-Java JRE 17 +
+Java JRE 24 +
